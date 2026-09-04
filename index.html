@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>extremlYharDmatH!</title>
+
+    <meta
+        name="description"
+        content="extremlYharDmatH! is a free browser castle defence maths game with waves, bosses, mages, upgrades and magic abilities."
+    >
+
+    <meta
+        name="keywords"
+        content="extremlYharDmatH, extremely hard math, math game, castle defence game, browser game, mage game"
+    >
+
+    <meta
+        name="author"
+        content="extremlYharDmatH!"
+    >
+
+    <meta
+        property="og:title"
+        content="extremlYharDmatH!"
+    >
+
+    <meta
+        property="og:description"
+        content="A castle defence maths game with waves, bosses, mages and upgrades."
+    >
+
+    <meta
+        property="og:type"
+        content="website"
+    >
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+</head>
+
+<body>
+
+    <!-- ============================= -->
+    <!-- TOP BAR -->
+    <!-- ============================= -->
+
+    <header id="topBar">
+
+        <h1 id="gameTitle">
+    ⚔️ extremlYharDmatH!
+</h1>
+
+        <div id="topStats">
+
+            <span>
+                💰 <span id="gold">0</span>
+            </span>
+
+            <span>
+                🪙 <span id="mageCoins">0</span>
+            </span>
+
+            <span>
+                🌊 Wave <span id="wave">1</span>
+            </span>
+
+            <button id="pauseButton">
+                ⏸️ PAUSE
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <main id="game">
+
+        <!-- ============================= -->
+        <!-- BATTLEFIELD -->
+        <!-- ============================= -->
+
+        <section id="battlefield">
+
+            <!-- BACKGROUND -->
+
+            <div class="mountain mountain1"></div>
+            <div class="mountain mountain2"></div>
+            <div class="mountain mountain3"></div>
+
+            <div class="cloud cloud1"></div>
+            <div class="cloud cloud2"></div>
+
+
+            <!-- ============================= -->
+            <!-- CASTLE AREA -->
+            <!-- ============================= -->
+
+            <div id="castleArea">
+
+                <!-- HEALTH -->
+
+                <div id="castleHealthBar">
+
+                    <div id="castleHealthFill"></div>
+
+                </div>
+
+                <div id="castleHealthText">
+                    100 / 100
+                </div>
+
+
+                <!-- ============================= -->
+                <!-- MAGES -->
+                <!-- ============================= -->
+
+                <div id="mageRow">
+
+                    <!-- FIRE -->
+
+                    <button
+                        class="mage fireMage"
+                        id="fireMage"
+                        type="button"
+                    >
+
+                        <div class="mageIcon">
+                            🔥
+                        </div>
+
+                        <div class="mageName">
+                            FIRE
+                        </div>
+
+                        <div class="mpTag">
+                            30 MP
+                        </div>
+
+                        <div
+                            class="cooldownOverlay"
+                            id="fireCooldownText"
+                        ></div>
+
+                    </button>
+
+
+                    <!-- ICE -->
+
+                    <button
+                        class="mage iceMage lockedMage"
+                        id="iceMage"
+                        type="button"
+                    >
+
+                        <div class="mageIcon">
+                            ❄️
+                        </div>
+
+                        <div class="mageName">
+                            ICE
+                        </div>
+
+                        <div class="mpTag">
+                            25 MP
+                        </div>
+
+                        <div
+                            class="cooldownOverlay"
+                            id="iceCooldownText"
+                        >
+                            🔒
+                        </div>
+
+                    </button>
+
+
+                    <!-- STORM -->
+
+                    <button
+                        class="mage stormMage lockedMage"
+                        id="stormMage"
+                        type="button"
+                    >
+
+                        <div class="mageIcon">
+                            ⚡
+                        </div>
+
+                        <div class="mageName">
+                            STORM
+                        </div>
+
+                        <div class="mpTag">
+                            40 MP
+                        </div>
+
+                        <div
+                            class="cooldownOverlay"
+                            id="stormCooldownText"
+                        >
+                            🔒
+                        </div>
+
+                    </button>
+
+
+                    <!-- POISON -->
+
+                    <button
+                        class="mage poisonMage lockedMage"
+                        id="poisonMage"
+                        type="button"
+                    >
+
+                        <div class="mageIcon">
+                            ☠️
+                        </div>
+
+                        <div class="mageName">
+                            POISON
+                        </div>
+
+                        <div class="mpTag">
+                            35 MP
+                        </div>
+
+                        <div
+                            class="cooldownOverlay"
+                            id="poisonCooldownText"
+                        >
+                            🔒
+                        </div>
+
+                    </button>
+
+                </div>
+
+
+                <!-- ============================= -->
+                <!-- CASTLE DRAWING -->
+                <!-- ============================= -->
+
+                <div id="castle">
+
+                    <div class="sideTower leftTower">
+
+                        <div class="roof"></div>
+
+                        <div class="castleWindow"></div>
+
+                    </div>
+
+
+                    <div class="mainTower">
+
+                        <div class="battlements">
+
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+
+                        </div>
+
+                        <div class="castleWindow windowLeft"></div>
+
+                        <div class="castleWindow windowRight"></div>
+
+                        <div class="castleDoor"></div>
+
+                    </div>
+
+
+                    <div class="sideTower rightTower">
+
+                        <div class="roof"></div>
+
+                        <div class="castleWindow"></div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROJECTILES -->
+
+            <div id="arrowContainer"></div>
+
+            <div id="spellContainer"></div>
+
+
+            <!-- ENEMIES -->
+
+            <div id="enemyContainer"></div>
+
+
+            <!-- GROUND -->
+
+            <div id="ground"></div>
+
+
+            <!-- ============================= -->
+            <!-- QUESTION BEFORE WAVE -->
+            <!-- ============================= -->
+
+            <div id="waveStartPanel">
+
+                <div id="waveStartTitle">
+                    WAVE <span id="readyWave">1</span>
+                </div>
+
+                <div id="bossWarning"></div>
+
+                <p>
+                    Answer correctly to start the battle.
+                </p>
+
+
+                <div id="question">
+                    1 + 1 = ?
+                </div>
+
+
+                <div id="questionControls">
+
+                    <input
+                        id="answer"
+                        type="number"
+                        placeholder="Answer"
+                        autocomplete="off"
+                    >
+
+                    <button
+                        id="startWaveButton"
+                        type="button"
+                    >
+                        ⚔️ START BATTLE
+                    </button>
+
+                </div>
+
+
+                <div id="questionMessage"></div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ============================= -->
+        <!-- BATTLE STATS -->
+        <!-- ============================= -->
+
+        <section id="battleStats">
+
+            <div>
+                🏰 Castle
+                <strong id="castleStat">
+                    100
+                </strong>
+            </div>
+
+
+            <div>
+                🏹 Arrow Damage
+                <strong id="arrowDamageStat">
+                    5
+                </strong>
+            </div>
+
+
+            <div>
+                💰 Gold
+                <strong id="goldStat">
+                    0
+                </strong>
+            </div>
+
+
+            <div>
+                🪙 Mage Coins
+                <strong id="mageCoinStat">
+                    0
+                </strong>
+            </div>
+
+        </section>
+
+
+        <!-- ============================= -->
+        <!-- MANA -->
+        <!-- ============================= -->
+
+        <section id="manaPanel">
+
+            <div id="manaTitle">
+                ✨ MANA
+            </div>
+
+
+            <div id="manaBar">
+
+                <div id="manaFill"></div>
+
+            </div>
+
+
+            <div id="manaText">
+                100 / 100 MP
+            </div>
+
+
+            <div id="manaStatus">
+                Mana regeneration is paused until the battle starts.
+            </div>
+
+        </section>
+
+
+        <!-- ============================= -->
+        <!-- NORMAL GOLD SHOP -->
+        <!-- ============================= -->
+
+        <section class="shop">
+
+            <h2>
+                💰 CASTLE SHOP
+            </h2>
+
+            <p class="shopDescription">
+                These upgrades use normal Gold.
+            </p>
+
+
+            <div class="shopGrid">
+
+
+                <!-- ARROW DAMAGE -->
+
+                <div class="upgradeCard">
+
+                    <div class="upgradeIcon">
+                        🏹
+                    </div>
+
+                    <h3>
+                        Arrow Damage
+                    </h3>
+
+                    <p>
+                        Damage:
+                        <strong id="arrowDamageValue">
+                            5
+                        </strong>
+                    </p>
+
+                    <button
+                        id="arrowUpgrade"
+                        type="button"
+                    >
+                        Upgrade -
+                        <span id="arrowCostText">
+                            20
+                        </span>
+                        💰
+                    </button>
+
+                </div>
+
+
+                <!-- HEALTH -->
+
+                <div class="upgradeCard">
+
+                    <div class="upgradeIcon">
+                        🏰
+                    </div>
+
+                    <h3>
+                        Castle Health
+                    </h3>
+
+                    <p>
+                        Max:
+                        <strong id="castleHealthValue">
+                            100
+                        </strong>
+                    </p>
+
+                    <button
+                        id="castleUpgrade"
+                        type="button"
+                    >
+                        Upgrade -
+                        <span id="castleCostText">
+                            25
+                        </span>
+                        💰
+                    </button>
+
+                </div>
+
+
+                <!-- ARCHER SPEED -->
+
+                <div class="upgradeCard">
+
+                    <div class="upgradeIcon">
+                        🏹
+                    </div>
+
+                    <h3>
+                        Archer Speed
+                    </h3>
+
+                    <p>
+                        Level:
+                        <strong id="archerLevelValue">
+                            1
+                        </strong>
+                    </p>
+
+                    <button
+                        id="archerUpgrade"
+                        type="button"
+                    >
+                        Upgrade -
+                        <span id="archerCostText">
+                            30
+                        </span>
+                        💰
+                    </button>
+
+                </div>
+
+
+                <!-- MANA -->
+
+                <div class="upgradeCard">
+
+                    <div class="upgradeIcon">
+                        ✨
+                    </div>
+
+                    <h3>
+                        Maximum Mana
+                    </h3>
+
+                    <p>
+                        Maximum:
+                        <strong id="maxManaValue">
+                            100
+                        </strong>
+                    </p>
+
+                    <button
+                        id="manaUpgrade"
+                        type="button"
+                    >
+                        Upgrade -
+                        <span id="manaUpgradeCostText">
+                            40
+                        </span>
+                        💰
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ============================= -->
+        <!-- MAGE SHOP -->
+        <!-- ============================= -->
+
+        <section
+            class="shop"
+            id="mageShop"
+        >
+
+            <h2>
+                🪙 MAGE SHOP
+            </h2>
+
+            <p class="shopDescription">
+                Defeat a boss every 10 waves to earn 2 Mage Coins.
+                Mage Coins unlock and upgrade mages.
+            </p>
+
+
+            <div class="shopGrid">
+
+
+                <!-- FIRE -->
+
+                <div class="upgradeCard mageShopCard fireShop">
+
+                    <div class="upgradeIcon">
+                        🔥
+                    </div>
+
+                    <h3>
+                        Fire Mage
+                    </h3>
+
+                    <p>
+                        Level:
+                        <strong id="fireLevelText">
+                            1
+                        </strong>
+                    </p>
+
+                    <p class="abilityText">
+                        Burns every enemy for moderate damage.
+                    </p>
+
+                    <button
+                        id="fireUpgrade"
+                        type="button"
+                    >
+                        Upgrade -
+                        <span id="fireUpgradeCostText">
+                            2
+                        </span>
+                        🪙
+                    </button>
+
+                </div>
+
+
+                <!-- ICE -->
+
+                <div class="upgradeCard mageShopCard iceShop">
+
+                    <div class="upgradeIcon">
+                        ❄️
+                    </div>
+
+                    <h3>
+                        Ice Mage
+                    </h3>
+
+                    <p>
+                        Level:
+                        <strong id="iceLevelText">
+                            0
+                        </strong>
+                    </p>
+
+                    <p class="abilityText">
+                        Damages and slows every enemy.
+                    </p>
+
+                    <button
+                        id="iceUpgrade"
+                        type="button"
+                    >
+                        Unlock - 2 🪙
+                    </button>
+
+                </div>
+
+
+                <!-- STORM -->
+
+                <div class="upgradeCard mageShopCard stormShop">
+
+                    <div class="upgradeIcon">
+                        ⚡
+                    </div>
+
+                    <h3>
+                        Storm Mage
+                    </h3>
+
+                    <p>
+                        Level:
+                        <strong id="stormLevelText">
+                            0
+                        </strong>
+                    </p>
+
+                    <p class="abilityText">
+                        Strikes several enemies with lightning.
+                    </p>
+
+                    <button
+                        id="stormUpgrade"
+                        type="button"
+                    >
+                        Unlock - 4 🪙
+                    </button>
+
+                </div>
+
+
+                <!-- POISON -->
+
+                <div class="upgradeCard mageShopCard poisonShop">
+
+                    <div class="upgradeIcon">
+                        ☠️
+                    </div>
+
+                    <h3>
+                        Poison Mage
+                    </h3>
+
+                    <p>
+                        Level:
+                        <strong id="poisonLevelText">
+                            0
+                        </strong>
+                    </p>
+
+                    <p class="abilityText">
+                        Poisons enemies and damages them over time.
+                    </p>
+
+                    <button
+                        id="poisonUpgrade"
+                        type="button"
+                    >
+                        Unlock - 4 🪙
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- MESSAGE -->
+
+        <section id="message">
+            Answer the question to begin Wave 1.
+        </section>
+
+
+        <!-- GAME OVER -->
+
+        <section id="gameOver">
+
+            <h1>
+                💀 CASTLE DESTROYED
+            </h1>
+
+            <p>
+                You reached Wave
+                <strong id="finalWave">
+                    1
+                </strong>
+            </p>
+
+            <button
+                id="restartButton"
+                type="button"
+            >
+                🔄 PLAY AGAIN
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

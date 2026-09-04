@@ -1,0 +1,1562 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:
+        linear-gradient(
+            #142037,
+            #080d16
+        );
+
+    color: white;
+}
+
+
+/* ===================================== */
+/* TOP BAR */
+/* ===================================== */
+
+#topBar {
+    min-height: 72px;
+
+    padding:
+        0 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    background:
+        linear-gradient(
+            #3b3026,
+            #17110d
+        );
+
+    border-bottom:
+        4px solid #ca9536;
+
+    box-shadow:
+        0 5px 12px
+        rgba(0, 0, 0, 0.5);
+}
+
+#gameTitle {
+    font-size: 26px;
+
+    font-weight: 900;
+
+    letter-spacing: 1px;
+}
+
+#topStats {
+    display: flex;
+
+    align-items: center;
+
+    gap: 22px;
+
+    font-size: 19px;
+
+    font-weight: bold;
+}
+
+
+/* PAUSE */
+
+#pauseButton {
+    padding:
+        10px 16px;
+
+    border:
+        3px solid #5d4218;
+
+    border-radius: 8px;
+
+    background:
+        linear-gradient(
+            #ffd76a,
+            #c58f2d
+        );
+
+    color: #241805;
+
+    font-weight: 900;
+
+    cursor: pointer;
+}
+
+
+/* ===================================== */
+/* GAME */
+/* ===================================== */
+
+#game {
+    width:
+        min(
+            1300px,
+            96%
+        );
+
+    margin: auto;
+
+    padding:
+        20px 0 40px;
+}
+
+
+/* ===================================== */
+/* BATTLEFIELD */
+/* ===================================== */
+
+#battlefield {
+    position: relative;
+
+    height: 525px;
+
+    overflow: hidden;
+
+    border:
+        6px solid #392a1e;
+
+    border-radius: 16px;
+
+    background:
+        linear-gradient(
+            #67bfe5 0%,
+            #a9e1ef 62%,
+            #72a849 62%,
+            #47712e 100%
+        );
+
+    box-shadow:
+        0 10px 25px
+        rgba(0, 0, 0, 0.5);
+}
+
+
+/* ===================================== */
+/* BACKGROUND */
+/* ===================================== */
+
+.mountain {
+    position: absolute;
+
+    bottom: 145px;
+
+    width: 330px;
+
+    height: 190px;
+
+    background:
+        #77939a;
+
+    opacity: 0.48;
+
+    clip-path:
+        polygon(
+            50% 0,
+            100% 100%,
+            0 100%
+        );
+}
+
+.mountain1 {
+    left: 250px;
+}
+
+.mountain2 {
+    left: 550px;
+
+    transform:
+        scale(1.2);
+}
+
+.mountain3 {
+    right: 20px;
+
+    transform:
+        scale(0.85);
+}
+
+
+.cloud {
+    position: absolute;
+
+    width: 145px;
+
+    height: 38px;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.8
+        );
+
+    border-radius:
+        100px;
+}
+
+.cloud::before,
+.cloud::after {
+    content: "";
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    background: white;
+}
+
+.cloud::before {
+    width: 65px;
+
+    height: 65px;
+
+    top: -30px;
+
+    left: 20px;
+}
+
+.cloud::after {
+    width: 80px;
+
+    height: 80px;
+
+    top: -43px;
+
+    right: 15px;
+}
+
+.cloud1 {
+    top: 70px;
+
+    left: 360px;
+}
+
+.cloud2 {
+    top: 120px;
+
+    right: 160px;
+}
+
+
+/* ===================================== */
+/* GROUND */
+/* ===================================== */
+
+#ground {
+    position: absolute;
+
+    bottom: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 72px;
+
+    background:
+        repeating-linear-gradient(
+            45deg,
+            #604328,
+            #604328 20px,
+            #704f30 20px,
+            #704f30 40px
+        );
+
+    border-top:
+        6px solid #315722;
+}
+
+
+/* ===================================== */
+/* CASTLE AREA */
+/* ===================================== */
+
+#castleArea {
+    position: absolute;
+
+    left: 18px;
+
+    bottom: 60px;
+
+    width: 300px;
+
+    z-index: 15;
+}
+
+
+/* CASTLE HEALTH */
+
+#castleHealthBar {
+    width: 230px;
+
+    height: 21px;
+
+    margin:
+        0 auto;
+
+    background: #4c1616;
+
+    border:
+        3px solid white;
+
+    border-radius:
+        15px;
+
+    overflow: hidden;
+}
+
+#castleHealthFill {
+    width: 100%;
+
+    height: 100%;
+
+    background:
+        linear-gradient(
+            #65e366,
+            #1e9d2e
+        );
+}
+
+#castleHealthText {
+    text-align: center;
+
+    margin-top: 4px;
+
+    font-weight: bold;
+
+    text-shadow:
+        2px 2px 2px black;
+}
+
+
+/* ===================================== */
+/* CASTLE */
+/* ===================================== */
+
+#castle {
+    position: relative;
+
+    height: 255px;
+
+    margin-top: 5px;
+}
+
+
+.mainTower {
+    position: absolute;
+
+    width: 170px;
+
+    height: 210px;
+
+    left: 65px;
+
+    bottom: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            #8f8982,
+            #d8d0c5,
+            #979088
+        );
+
+    border:
+        5px solid #5e5751;
+}
+
+
+.sideTower {
+    position: absolute;
+
+    width: 88px;
+
+    height: 170px;
+
+    bottom: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            #88817a,
+            #c4bbb0
+        );
+
+    border:
+        5px solid #5e5751;
+}
+
+
+.leftTower {
+    left: 0;
+}
+
+
+.rightTower {
+    right: 0;
+}
+
+
+.roof {
+    position: absolute;
+
+    width: 110px;
+
+    height: 75px;
+
+    left: -16px;
+
+    top: -70px;
+
+    background: #8c3434;
+
+    clip-path:
+        polygon(
+            50% 0,
+            100% 100%,
+            0 100%
+        );
+}
+
+
+.battlements {
+    position: absolute;
+
+    top: -32px;
+
+    width: 100%;
+
+    display: flex;
+
+    justify-content:
+        space-around;
+}
+
+.battlements div {
+    width: 30px;
+
+    height: 38px;
+
+    background:
+        #b7afa6;
+
+    border:
+        4px solid #5e5751;
+
+    border-bottom: none;
+}
+
+
+.castleWindow {
+    width: 25px;
+
+    height: 39px;
+
+    background: #24354e;
+
+    border:
+        4px solid #5e5751;
+
+    border-radius:
+        15px 15px 0 0;
+}
+
+
+.sideTower .castleWindow {
+    position: absolute;
+
+    top: 55px;
+
+    left: 26px;
+}
+
+
+.mainTower .castleWindow {
+    position: absolute;
+
+    top: 55px;
+}
+
+
+.windowLeft {
+    left: 30px;
+}
+
+
+.windowRight {
+    right: 30px;
+}
+
+
+.castleDoor {
+    position: absolute;
+
+    left: 54px;
+
+    bottom: 0;
+
+    width: 55px;
+
+    height: 80px;
+
+    background: #37261a;
+
+    border:
+        4px solid #5e5751;
+
+    border-radius:
+        30px 30px 0 0;
+}
+
+
+/* ===================================== */
+/* MAGES */
+/* ===================================== */
+
+#mageRow {
+    position: absolute;
+
+    z-index: 50;
+
+    top: 52px;
+
+    left: 12px;
+
+    width: 276px;
+
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    gap: 5px;
+}
+
+
+.mage {
+    position: relative;
+
+    width: 66px;
+
+    min-height: 92px;
+
+    padding:
+        4px 3px 19px;
+
+    color: white;
+
+    border:
+        3px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.8
+        );
+
+    border-radius: 11px;
+
+    cursor: pointer;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 4px 7px
+        rgba(0, 0, 0, 0.55);
+}
+
+
+.fireMage {
+    background:
+        linear-gradient(
+            #df6038,
+            #7a1f18
+        );
+}
+
+
+.iceMage {
+    background:
+        linear-gradient(
+            #62cce9,
+            #226690
+        );
+}
+
+
+.stormMage {
+    background:
+        linear-gradient(
+            #8062db,
+            #39227a
+        );
+}
+
+
+.poisonMage {
+    background:
+        linear-gradient(
+            #6ca744,
+            #2b501e
+        );
+}
+
+
+.mageIcon {
+    font-size: 29px;
+}
+
+
+.mageName {
+    font-size: 10px;
+
+    font-weight: 900;
+}
+
+
+.mpTag {
+    position: absolute;
+
+    bottom: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    padding:
+        3px 1px;
+
+    background:
+        rgba(
+            15,
+            19,
+            55,
+            0.92
+        );
+
+    color: #78d8ff;
+
+    font-size: 10px;
+
+    font-weight: 900;
+
+    border-top:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.5
+        );
+}
+
+
+.cooldownOverlay {
+    position: absolute;
+
+    left: 0;
+
+    top: 0;
+
+    width: 100%;
+
+    height: calc(100% - 18px);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        rgba(
+            0,
+            0,
+            0,
+            0.70
+        );
+
+    font-size: 18px;
+
+    font-weight: 900;
+
+    pointer-events: none;
+}
+
+
+.cooldownOverlay:empty {
+    display: none;
+}
+
+
+.lockedMage {
+    filter:
+        grayscale(0.75);
+
+    opacity: 0.65;
+}
+
+
+/* ===================================== */
+/* ENEMIES */
+/* ===================================== */
+
+.enemy {
+    position: absolute;
+
+    bottom: 73px;
+
+    width: 95px;
+
+    z-index: 10;
+
+    text-align: center;
+}
+
+
+.enemyHealthBar {
+    width: 80px;
+
+    height: 12px;
+
+    margin:
+        0 auto;
+
+    background: #541414;
+
+    border:
+        2px solid white;
+
+    border-radius:
+        10px;
+
+    overflow: hidden;
+}
+
+
+.enemyHealthFill {
+    width: 100%;
+
+    height: 100%;
+
+    background:
+        linear-gradient(
+            #ee4949,
+            #ba1717
+        );
+}
+
+
+.enemyHealthText {
+    margin-top: 2px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    text-shadow:
+        1px 1px black;
+}
+
+
+.enemyBody {
+    position: relative;
+
+    width: 68px;
+
+    height: 76px;
+
+    margin:
+        6px auto 0;
+
+    border:
+        4px solid #39263a;
+
+    border-radius:
+        45% 45% 30% 30%;
+
+    background:
+        linear-gradient(
+            #754987,
+            #361e47
+        );
+
+    box-shadow:
+        4px 6px 4px
+        rgba(
+            0,
+            0,
+            0,
+            0.45
+        );
+}
+
+
+.enemyBody.green {
+    background:
+        linear-gradient(
+            #88af52,
+            #3e6229
+        );
+}
+
+
+.enemyBody.red {
+    background:
+        linear-gradient(
+            #ba5341,
+            #64261f
+        );
+}
+
+
+.enemyBody.blue {
+    background:
+        linear-gradient(
+            #437a9b,
+            #233a59
+        );
+}
+
+
+.enemyEye {
+    position: absolute;
+
+    top: 25px;
+
+    width: 13px;
+
+    height: 14px;
+
+    border-radius: 50%;
+
+    background: white;
+}
+
+
+.enemyEye.left {
+    left: 13px;
+}
+
+
+.enemyEye.right {
+    right: 13px;
+}
+
+
+.enemyEye::after {
+    content: "";
+
+    display: block;
+
+    width: 5px;
+
+    height: 5px;
+
+    margin:
+        5px auto;
+
+    border-radius: 50%;
+
+    background: black;
+}
+
+
+.enemyMouth {
+    position: absolute;
+
+    width: 27px;
+
+    height: 10px;
+
+    left: 17px;
+
+    bottom: 12px;
+
+    border-bottom:
+        5px solid white;
+
+    border-radius:
+        50%;
+}
+
+
+.horn {
+    position: absolute;
+
+    width: 20px;
+
+    height: 25px;
+
+    top: -18px;
+
+    background: #dfc46e;
+
+    clip-path:
+        polygon(
+            50% 0,
+            100% 100%,
+            0 100%
+        );
+}
+
+
+.horn.left {
+    left: 0;
+
+    transform:
+        rotate(-25deg);
+}
+
+
+.horn.right {
+    right: 0;
+
+    transform:
+        rotate(25deg);
+}
+
+
+/* ===================================== */
+/* BOSS */
+/* ===================================== */
+
+.enemy.bossEnemy {
+    width: 145px;
+}
+
+
+.enemy.bossEnemy
+.enemyHealthBar {
+    width: 125px;
+
+    height: 16px;
+
+    border:
+        3px solid #ffe684;
+}
+
+
+.bossBody {
+    width: 115px;
+
+    height: 130px;
+
+    border-width: 6px;
+
+    background:
+        linear-gradient(
+            #c03d3d,
+            #48131b
+        );
+
+    box-shadow:
+        7px 8px 8px
+        rgba(
+            0,
+            0,
+            0,
+            0.55
+        );
+}
+
+
+.bossBody
+.enemyEye {
+    top: 43px;
+
+    width: 18px;
+
+    height: 19px;
+}
+
+
+.bossBody
+.enemyEye.left {
+    left: 23px;
+}
+
+
+.bossBody
+.enemyEye.right {
+    right: 23px;
+}
+
+
+.bossBody
+.enemyMouth {
+    width: 45px;
+
+    left: 29px;
+
+    bottom: 19px;
+}
+
+
+.bossBody
+.horn {
+    width: 30px;
+
+    height: 40px;
+
+    top: -31px;
+}
+
+
+.bossLabel {
+    color: #ffe578;
+
+    font-size: 13px;
+
+    font-weight: 900;
+
+    text-shadow:
+        2px 2px black;
+}
+
+
+/* ===================================== */
+/* PROJECTILES */
+/* ===================================== */
+
+.arrow {
+    position: absolute;
+
+    z-index: 40;
+
+    font-size: 28px;
+
+    pointer-events: none;
+}
+
+
+.spellEffect {
+    position: absolute;
+
+    z-index: 60;
+
+    font-size: 55px;
+
+    pointer-events: none;
+}
+
+
+/* ===================================== */
+/* QUESTION PANEL */
+/* ===================================== */
+
+#waveStartPanel {
+    position: absolute;
+
+    z-index: 100;
+
+    width: 390px;
+
+    max-width:
+        calc(
+            100% - 30px
+        );
+
+    left: 50%;
+
+    top: 50%;
+
+    transform:
+        translate(
+            -50%,
+            -50%
+        );
+
+    padding: 25px;
+
+    text-align: center;
+
+    color: #251809;
+
+    background:
+        linear-gradient(
+            #f0d59b,
+            #c69846
+        );
+
+    border:
+        6px solid #65451b;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 12px 30px
+        rgba(
+            0,
+            0,
+            0,
+            0.55
+        );
+}
+
+
+#waveStartTitle {
+    font-size: 32px;
+
+    font-weight: 900;
+}
+
+
+#bossWarning {
+    min-height: 25px;
+
+    margin-top: 5px;
+
+    color: #a61d1d;
+
+    font-size: 20px;
+
+    font-weight: 900;
+}
+
+
+#question {
+    margin:
+        15px 0;
+
+    font-size: 43px;
+
+    font-weight: 900;
+}
+
+
+#questionControls {
+    display: flex;
+
+    gap: 8px;
+}
+
+
+#answer {
+    width: 125px;
+
+    min-width: 0;
+
+    padding: 12px;
+
+    border:
+        3px solid #523816;
+
+    border-radius: 7px;
+
+    text-align: center;
+
+    font-size: 22px;
+}
+
+
+#startWaveButton {
+    flex: 1;
+
+    padding: 12px;
+
+    border:
+        3px solid #721d1d;
+
+    border-radius: 7px;
+
+    background:
+        linear-gradient(
+            #ee5144,
+            #af2828
+        );
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: 900;
+
+    cursor: pointer;
+}
+
+
+#questionMessage {
+    min-height: 22px;
+
+    margin-top: 10px;
+
+    font-weight: bold;
+}
+
+
+/* ===================================== */
+/* STATS */
+/* ===================================== */
+
+#battleStats {
+    margin-top: 15px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            4,
+            1fr
+        );
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            #393939,
+            #171717
+        );
+
+    border:
+        3px solid #a87e36;
+
+    border-radius: 10px;
+}
+
+
+#battleStats div {
+    padding: 15px;
+
+    text-align: center;
+
+    border-right:
+        1px solid #555;
+}
+
+
+#battleStats div:last-child {
+    border-right: none;
+}
+
+
+#battleStats strong {
+    display: block;
+
+    margin-top: 5px;
+
+    color: #ffd66b;
+
+    font-size: 25px;
+}
+
+
+/* ===================================== */
+/* MANA */
+/* ===================================== */
+
+#manaPanel {
+    margin-top: 15px;
+
+    padding:
+        15px 20px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            #302350,
+            #151027
+        );
+
+    border:
+        3px solid #7460a5;
+
+    border-radius: 10px;
+}
+
+
+#manaTitle {
+    margin-bottom: 8px;
+
+    font-weight: 900;
+}
+
+
+#manaBar {
+    width: 600px;
+
+    max-width: 100%;
+
+    height: 25px;
+
+    margin: auto;
+
+    overflow: hidden;
+
+    background: #121026;
+
+    border:
+        3px solid white;
+
+    border-radius: 20px;
+}
+
+
+#manaFill {
+    width: 100%;
+
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #3f5fe4,
+            #53cbff
+        );
+}
+
+
+#manaText {
+    margin-top: 5px;
+
+    font-weight: bold;
+}
+
+
+#manaStatus {
+    margin-top: 5px;
+
+    color: #d5cff7;
+
+    font-size: 13px;
+}
+
+
+/* ===================================== */
+/* SHOPS */
+/* ===================================== */
+
+.shop {
+    margin-top: 20px;
+
+    padding: 20px;
+
+    background:
+        linear-gradient(
+            #303743,
+            #15191e
+        );
+
+    border:
+        4px solid #9f7837;
+
+    border-radius: 14px;
+}
+
+
+.shop h2 {
+    margin-top: 0;
+
+    text-align: center;
+
+    color: #ffd36a;
+}
+
+
+.shopDescription {
+    text-align: center;
+
+    color: #d6d6d6;
+}
+
+
+.shopGrid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            4,
+            1fr
+        );
+
+    gap: 14px;
+}
+
+
+.upgradeCard {
+    padding: 15px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            #555f6e,
+            #2e343d
+        );
+
+    border:
+        3px solid #80673d;
+
+    border-radius: 10px;
+}
+
+
+.upgradeIcon {
+    font-size: 42px;
+}
+
+
+.upgradeCard h3 {
+    margin:
+        7px 0;
+}
+
+
+.upgradeCard button {
+    width: 100%;
+
+    min-height: 44px;
+
+    padding: 10px;
+
+    border:
+        3px solid #5d4214;
+
+    border-radius: 7px;
+
+    background:
+        linear-gradient(
+            #f0c75d,
+            #ba8728
+        );
+
+    color: #251a08;
+
+    font-weight: 900;
+
+    cursor: pointer;
+}
+
+
+.abilityText {
+    min-height: 38px;
+
+    color: #ddd;
+
+    font-size: 13px;
+}
+
+
+/* ===================================== */
+/* MESSAGE */
+/* ===================================== */
+
+#message {
+    min-height: 58px;
+
+    margin-top: 15px;
+
+    padding: 16px;
+
+    text-align: center;
+
+    background: #222;
+
+    border:
+        3px solid #515151;
+
+    border-radius: 10px;
+
+    font-size: 18px;
+
+    font-weight: bold;
+}
+
+
+/* ===================================== */
+/* GAME OVER */
+/* ===================================== */
+
+#gameOver {
+    display: none;
+
+    margin-top: 20px;
+
+    padding: 30px;
+
+    text-align: center;
+
+    background: #44191b;
+
+    border:
+        5px solid #b83737;
+
+    border-radius: 13px;
+}
+
+
+#restartButton {
+    padding:
+        14px 28px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    font-size: 18px;
+
+    font-weight: 900;
+
+    cursor: pointer;
+}
+
+
+/* ===================================== */
+/* MOBILE */
+/* ===================================== */
+
+@media
+(max-width: 850px) {
+
+    #topBar {
+        gap: 10px;
+
+        flex-wrap: wrap;
+
+        padding: 10px;
+    }
+
+    #gameTitle {
+        font-size: 18px;
+    }
+
+    #topStats {
+        gap: 10px;
+
+        flex-wrap: wrap;
+
+        font-size: 14px;
+    }
+
+    .shopGrid {
+        grid-template-columns:
+            repeat(
+                2,
+                1fr
+            );
+    }
+
+    #battleStats {
+        grid-template-columns:
+            repeat(
+                2,
+                1fr
+            );
+    }
+
+}
