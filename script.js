@@ -80,6 +80,8 @@ const startWaveButton =
 const questionMessage =
     document.getElementById("questionMessage");
 
+    const questionText = document.getElementById("question");
+
     
 
 
