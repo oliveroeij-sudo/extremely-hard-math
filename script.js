@@ -1602,6 +1602,8 @@ function checkWaveComplete() {
 
         wave++;
 
+        saveGame();
+
 
         updateUI();
 
@@ -3229,6 +3231,8 @@ restartButton.addEventListener(
 // =====================================
 // START GAME
 // =====================================
+
+loadGame();
 
 updateUI();
 
