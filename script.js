@@ -478,16 +478,14 @@ function tryStartWave() {
         );
 
 
-    if (
-        if (answer !== correctAnswer) 
-    ) {
-
+   if (answer !== correctAnswer) {
+        
         questionMessage.textContent =
             "❌ Wrong. Try again!";
 
         return;
-
-    }
+   }
+    
 
 
     questionMessage.textContent =
