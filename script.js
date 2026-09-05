@@ -406,6 +406,9 @@ const number2 = Math.floor(Math.random() * 10) + 1;
 
 correctAnswer = number1 + number2;
 
+questionText.textContent =
+    number1 + " + " + number2 + " = ?";
+
 currentQuestion = number1 + " + " + number2 + " = ?";
 
 readyWave.textContent =
