@@ -3222,10 +3222,44 @@ restartButton.addEventListener(
     "click",
     function() {
 
+        localStorage.removeItem("extremelyHardMathSave");
+
         location.reload();
 
     }
 );
+
+// =================================
+//save game
+//==================================
+
+function saveGame() {
+    const gameData = {
+        wave: wave,
+        gold: gold,
+        mageCoins: mageCoins,
+        castleHealth: castleHealth
+    };
+
+    localStorage.setItem(
+        "extremelyHardMathSave",
+        JSON.stringify(gameData)
+    );
+}
+
+function loadGame() {
+    const savedGame =
+        localStorage.getItem("extremelyHardMathSave");
+
+    if (savedGame) {
+        const gameData = JSON.parse(savedGame);
+
+        wave = gameData.wave;
+        gold = gameData.gold;
+        mageCoins = gameData.mageCoins;
+        castleHealth = gameData.castleHealth;
+    }
+}
 
 
 // =====================================
