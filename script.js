@@ -409,12 +409,6 @@ correctAnswer = number1 + number2;
 questionText.textContent =
     number1 + " + " + number2 + " = ?";
 
-currentQuestion = number1 + " + " + number2 + " = ?";
-
-readyWave.textContent =
-    "Wave " + wave + " - Solve: " + currentQuestion;
-
-
     waveStartPanel.style.display =
         "block";
 
