@@ -80,6 +80,8 @@ const startWaveButton =
 const questionMessage =
     document.getElementById("questionMessage");
 
+    
+
 
 // MANA
 
@@ -220,6 +222,10 @@ let gameRunning = true;
 let gamePaused = false;
 
 let battleActive = false;
+
+let correctAnswer = 0;
+
+let currentQuestion = "";
 
 
 // WAVE
@@ -393,6 +399,16 @@ function prepareWave() {
     questionMessage.textContent =
         "";
 
+        const number1 = Math.floor(Math.random() * 10) + 1;
+const number2 = Math.floor(Math.random() * 10) + 1;
+
+correctAnswer = number1 + number2;
+
+currentQuestion = number1 + " + " + number2 + " = ?";
+
+readyWave.textContent =
+    "Wave " + wave + " - Solve: " + currentQuestion;
+
 
     waveStartPanel.style.display =
         "block";
@@ -463,7 +479,7 @@ function tryStartWave() {
 
 
     if (
-        answer !== 2
+        if (answer !== correctAnswer) 
     ) {
 
         questionMessage.textContent =
