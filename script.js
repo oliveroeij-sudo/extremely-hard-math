@@ -3240,11 +3240,9 @@ function saveGame() {
         gold: gold,
         mageCoins: mageCoins,
         castleHealth: castleHealth,
-
-        fireLevel: fireLevel,
-        iceLevel: iceLevel,
-        stormLevel: stormLevel,
-        poisonLevel: poisonLevel
+        mana: mana,
+        arrowDamage: arrowDamage,
+        archerSpeed: archerSpeed,
     };
 
     localStorage.setItem(
@@ -3264,11 +3262,9 @@ function loadGame() {
         gold = gameData.gold;
         mageCoins = gameData.mageCoins;
         castleHealth = gameData.castleHealth;
-
-        fireLevel = gameData.fireLevel;
-        iceLevel = gameData.iceLevel;
-        stormLevel = gameData.stormLevel;
-        poisonLevel = gameData.poisonLevel;
+        mana = gameData.mana;
+        arrowDamage = gameData.arrowDamage;
+        archerSpeed = gameData.archerSpeed;
     }
 }
 
