@@ -3,6 +3,7 @@
 // CASTLE DEFENCE GAME
 // =====================================
 
+const bottomWave = document.getElementById("bottomWave");
 
 // =====================================
 // HTML ELEMENTS
@@ -390,9 +391,9 @@ function prepareWave() {
     battleActive = false;
 
 
-    readyWave.textContent =
-        wave;
+    readyWave.textContent = wave;
 
+    bottomWave.textContent = wave;
 
     answerInput.value =
         "";
