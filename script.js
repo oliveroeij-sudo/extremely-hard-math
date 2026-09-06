@@ -81,9 +81,8 @@ const startWaveButton =
 const questionMessage =
     document.getElementById("questionMessage");
 
-    const questionText = document.getElementById("question");
-
-    
+const questionText =
+    document.getElementById("question");
 
 
 // MANA
@@ -395,6 +394,7 @@ function prepareWave() {
 
     bottomWave.textContent = wave;
 
+
     answerInput.value =
         "";
 
@@ -402,13 +402,29 @@ function prepareWave() {
     questionMessage.textContent =
         "";
 
-        const number1 = Math.floor(Math.random() * 10) + 1;
-const number2 = Math.floor(Math.random() * 10) + 1;
 
-correctAnswer = number1 + number2;
+    const number1 =
+        Math.floor(
+            Math.random() * 10
+        ) + 1;
 
-questionText.textContent =
-    number1 + " + " + number2 + " = ?";
+
+    const number2 =
+        Math.floor(
+            Math.random() * 10
+        ) + 1;
+
+
+    correctAnswer =
+        number1 + number2;
+
+
+    questionText.textContent =
+        number1 +
+        " + " +
+        number2 +
+        " = ?";
+
 
     waveStartPanel.style.display =
         "block";
@@ -478,14 +494,16 @@ function tryStartWave() {
         );
 
 
-   if (answer !== correctAnswer) {
-        
+    if (
+        answer !== correctAnswer
+    ) {
+
         questionMessage.textContent =
             "❌ Wrong. Try again!";
 
         return;
-   }
-    
+
+    }
 
 
     questionMessage.textContent =
@@ -1603,6 +1621,7 @@ function checkWaveComplete() {
 
         wave++;
 
+
         saveGame();
 
 
@@ -2314,6 +2333,9 @@ arrowUpgrade.addEventListener(
             "🏹 Arrow damage upgraded!";
 
 
+        saveGame();
+
+
         updateUI();
 
     }
@@ -2356,6 +2378,9 @@ castleUpgrade.addEventListener(
             "🏰 Castle upgraded and fully healed!";
 
 
+        saveGame();
+
+
         updateUI();
 
     }
@@ -2391,6 +2416,9 @@ archerUpgrade.addEventListener(
 
         messageText.textContent =
             "🏹 Archers now fire faster!";
+
+
+        saveGame();
 
 
         updateUI();
@@ -2435,6 +2463,9 @@ manaUpgrade.addEventListener(
             "✨ Maximum mana increased!";
 
 
+        saveGame();
+
+
         updateUI();
 
     }
@@ -2470,6 +2501,9 @@ fireUpgrade.addEventListener(
             "🔥 Fire Mage upgraded to Level " +
             fireLevel +
             "!";
+
+
+        saveGame();
 
 
         updateUI();
@@ -2545,6 +2579,9 @@ iceUpgrade.addEventListener(
         }
 
 
+        saveGame();
+
+
         updateUI();
 
     }
@@ -2618,6 +2655,9 @@ stormUpgrade.addEventListener(
         }
 
 
+        saveGame();
+
+
         updateUI();
 
     }
@@ -2689,6 +2729,9 @@ poisonUpgrade.addEventListener(
                 "!";
 
         }
+
+
+        saveGame();
 
 
         updateUI();
@@ -3189,6 +3232,13 @@ function updateOneMage(
 
 function gameOver() {
 
+    // DYING ERASES THE SAVED RUN
+
+    localStorage.removeItem(
+        "extremelyHardMathSave"
+    );
+
+
     gameRunning =
         false;
 
@@ -3223,49 +3273,304 @@ restartButton.addEventListener(
     "click",
     function() {
 
-        localStorage.removeItem("extremelyHardMathSave");
+        localStorage.removeItem(
+            "extremelyHardMathSave"
+        );
+
 
         location.reload();
 
     }
 );
 
-// =================================
-//save game
-//==================================
+
+// =====================================
+// SAVE GAME
+// =====================================
 
 function saveGame() {
+
     const gameData = {
-        wave: wave,
-        gold: gold,
-        mageCoins: mageCoins,
-        castleHealth: castleHealth,
-        mana: mana,
-        arrowDamage: arrowDamage,
-        archerSpeed: archerSpeed,
+
+        // PROGRESS
+
+        wave:
+            wave,
+
+        gold:
+            gold,
+
+        mageCoins:
+            mageCoins,
+
+
+        // CASTLE
+
+        castleHealth:
+            castleHealth,
+
+        maxCastleHealth:
+            maxCastleHealth,
+
+
+        // ARCHERS
+
+        arrowDamage:
+            arrowDamage,
+
+        archerLevel:
+            archerLevel,
+
+
+        // MANA
+
+        mana:
+            mana,
+
+        maxMana:
+            maxMana,
+
+
+        // NORMAL SHOP COSTS
+
+        arrowCost:
+            arrowCost,
+
+        castleCost:
+            castleCost,
+
+        archerCost:
+            archerCost,
+
+        manaUpgradeCost:
+            manaUpgradeCost,
+
+
+        // MAGES
+
+        fireUnlocked:
+            fireUnlocked,
+
+        fireLevel:
+            fireLevel,
+
+
+        iceUnlocked:
+            iceUnlocked,
+
+        iceLevel:
+            iceLevel,
+
+
+        stormUnlocked:
+            stormUnlocked,
+
+        stormLevel:
+            stormLevel,
+
+
+        poisonUnlocked:
+            poisonUnlocked,
+
+        poisonLevel:
+            poisonLevel,
+
+
+        // MAGE UPGRADE COSTS
+
+        fireUpgradeCost:
+            fireUpgradeCost,
+
+        iceUpgradeCost:
+            iceUpgradeCost,
+
+        stormUpgradeCost:
+            stormUpgradeCost,
+
+        poisonUpgradeCost:
+            poisonUpgradeCost
+
     };
 
+
     localStorage.setItem(
+
         "extremelyHardMathSave",
-        JSON.stringify(gameData)
+
+        JSON.stringify(
+            gameData
+        )
+
     );
+
 }
 
+
+// =====================================
+// LOAD GAME
+// =====================================
+
 function loadGame() {
+
     const savedGame =
-        localStorage.getItem("extremelyHardMathSave");
+        localStorage.getItem(
+            "extremelyHardMathSave"
+        );
 
-    if (savedGame) {
-        const gameData = JSON.parse(savedGame);
 
-        wave = gameData.wave;
-        gold = gameData.gold;
-        mageCoins = gameData.mageCoins;
-        castleHealth = gameData.castleHealth;
-        mana = gameData.mana;
-        arrowDamage = gameData.arrowDamage;
-        archerSpeed = gameData.archerSpeed;
+    if (
+        !savedGame
+    ) {
+
+        return;
+
     }
+
+
+    const gameData =
+        JSON.parse(
+            savedGame
+        );
+
+
+    // PROGRESS
+
+    wave =
+        gameData.wave ??
+        wave;
+
+
+    gold =
+        gameData.gold ??
+        gold;
+
+
+    mageCoins =
+        gameData.mageCoins ??
+        mageCoins;
+
+
+    // CASTLE
+
+    castleHealth =
+        gameData.castleHealth ??
+        castleHealth;
+
+
+    maxCastleHealth =
+        gameData.maxCastleHealth ??
+        maxCastleHealth;
+
+
+    // ARCHERS
+
+    arrowDamage =
+        gameData.arrowDamage ??
+        arrowDamage;
+
+
+    archerLevel =
+        gameData.archerLevel ??
+        archerLevel;
+
+
+    // MANA
+
+    mana =
+        gameData.mana ??
+        mana;
+
+
+    maxMana =
+        gameData.maxMana ??
+        maxMana;
+
+
+    // NORMAL SHOP COSTS
+
+    arrowCost =
+        gameData.arrowCost ??
+        arrowCost;
+
+
+    castleCost =
+        gameData.castleCost ??
+        castleCost;
+
+
+    archerCost =
+        gameData.archerCost ??
+        archerCost;
+
+
+    manaUpgradeCost =
+        gameData.manaUpgradeCost ??
+        manaUpgradeCost;
+
+
+    // MAGES
+
+    fireUnlocked =
+        gameData.fireUnlocked ??
+        fireUnlocked;
+
+
+    fireLevel =
+        gameData.fireLevel ??
+        fireLevel;
+
+
+    iceUnlocked =
+        gameData.iceUnlocked ??
+        iceUnlocked;
+
+
+    iceLevel =
+        gameData.iceLevel ??
+        iceLevel;
+
+
+    stormUnlocked =
+        gameData.stormUnlocked ??
+        stormUnlocked;
+
+
+    stormLevel =
+        gameData.stormLevel ??
+        stormLevel;
+
+
+    poisonUnlocked =
+        gameData.poisonUnlocked ??
+        poisonUnlocked;
+
+
+    poisonLevel =
+        gameData.poisonLevel ??
+        poisonLevel;
+
+
+    // MAGE UPGRADE COSTS
+
+    fireUpgradeCost =
+        gameData.fireUpgradeCost ??
+        fireUpgradeCost;
+
+
+    iceUpgradeCost =
+        gameData.iceUpgradeCost ??
+        iceUpgradeCost;
+
+
+    stormUpgradeCost =
+        gameData.stormUpgradeCost ??
+        stormUpgradeCost;
+
+
+    poisonUpgradeCost =
+        gameData.poisonUpgradeCost ??
+        poisonUpgradeCost;
+
 }
 
 
@@ -3275,10 +3580,14 @@ function loadGame() {
 
 loadGame();
 
+
 updateUI();
+
 
 prepareWave();
 
+
 moveEnemies();
+
 
 archerLoop();

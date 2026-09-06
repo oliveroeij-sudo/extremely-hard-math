@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
 
     <meta
@@ -45,9 +46,12 @@
         rel="stylesheet"
         href="style.css"
     >
+
 </head>
 
+
 <body>
+
 
     <!-- ============================= -->
     <!-- TOP BAR -->
@@ -56,24 +60,40 @@
     <header id="topBar">
 
         <h1 id="gameTitle">
-    ⚔️ extremlYharDmatH!
-</h1>
+            ⚔️ extremlYharDmatH!
+        </h1>
+
 
         <div id="topStats">
 
             <span>
-                💰 <span id="gold">0</span>
+                💰
+                <span id="gold">
+                    0
+                </span>
             </span>
+
 
             <span>
-                🪙 <span id="mageCoins">0</span>
+                🪙
+                <span id="mageCoins">
+                    0
+                </span>
             </span>
+
 
             <span>
-                🌊 Wave <span id="wave">1</span>
+                🌊 Wave
+                <span id="wave">
+                    1
+                </span>
             </span>
 
-            <button id="pauseButton">
+
+            <button
+                id="pauseButton"
+                type="button"
+            >
                 ⏸️ PAUSE
             </button>
 
@@ -84,19 +104,25 @@
 
     <main id="game">
 
+
         <!-- ============================= -->
         <!-- BATTLEFIELD -->
         <!-- ============================= -->
 
         <section id="battlefield">
 
+
             <!-- BACKGROUND -->
 
             <div class="mountain mountain1"></div>
+
             <div class="mountain mountain2"></div>
+
             <div class="mountain mountain3"></div>
 
+
             <div class="cloud cloud1"></div>
+
             <div class="cloud cloud2"></div>
 
 
@@ -106,6 +132,7 @@
 
             <div id="castleArea">
 
+
                 <!-- HEALTH -->
 
                 <div id="castleHealthBar">
@@ -113,6 +140,7 @@
                     <div id="castleHealthFill"></div>
 
                 </div>
+
 
                 <div id="castleHealthText">
                     100 / 100
@@ -124,6 +152,7 @@
                 <!-- ============================= -->
 
                 <div id="mageRow">
+
 
                     <!-- FIRE -->
 
@@ -137,13 +166,16 @@
                             🔥
                         </div>
 
+
                         <div class="mageName">
                             FIRE
                         </div>
 
+
                         <div class="mpTag">
                             30 MP
                         </div>
+
 
                         <div
                             class="cooldownOverlay"
@@ -165,13 +197,16 @@
                             ❄️
                         </div>
 
+
                         <div class="mageName">
                             ICE
                         </div>
 
+
                         <div class="mpTag">
                             25 MP
                         </div>
+
 
                         <div
                             class="cooldownOverlay"
@@ -195,13 +230,16 @@
                             ⚡
                         </div>
 
+
                         <div class="mageName">
                             STORM
                         </div>
 
+
                         <div class="mpTag">
                             40 MP
                         </div>
+
 
                         <div
                             class="cooldownOverlay"
@@ -225,13 +263,16 @@
                             ☠️
                         </div>
 
+
                         <div class="mageName">
                             POISON
                         </div>
 
+
                         <div class="mpTag">
                             35 MP
                         </div>
+
 
                         <div
                             class="cooldownOverlay"
@@ -251,6 +292,7 @@
 
                 <div id="castle">
 
+
                     <div class="sideTower leftTower">
 
                         <div class="roof"></div>
@@ -265,11 +307,15 @@
                         <div class="battlements">
 
                             <div></div>
+
                             <div></div>
+
                             <div></div>
+
                             <div></div>
 
                         </div>
+
 
                         <div class="castleWindow windowLeft"></div>
 
@@ -316,11 +362,17 @@
 
             <div id="waveStartPanel">
 
+
                 <div id="waveStartTitle">
-                    WAVE <span id="readyWave">1</span>
+                    WAVE
+                    <span id="readyWave">
+                        1
+                    </span>
                 </div>
 
+
                 <div id="bossWarning"></div>
+
 
                 <p>
                     Answer correctly to start the battle.
@@ -338,6 +390,7 @@
                         placeholder="Answer"
                         autocomplete="off"
                     >
+
 
                     <button
                         id="startWaveButton"
@@ -361,6 +414,7 @@
         <!-- ============================= -->
 
         <section id="battleStats">
+
 
             <div>
                 🏰 Castle
@@ -402,6 +456,7 @@
 
         <section id="manaPanel">
 
+
             <div id="manaTitle">
                 ✨ MANA
             </div>
@@ -432,9 +487,11 @@
 
         <section class="shop">
 
+
             <h2>
                 💰 CASTLE SHOP
             </h2>
+
 
             <p class="shopDescription">
                 These upgrades use normal Gold.
@@ -452,9 +509,11 @@
                         🏹
                     </div>
 
+
                     <h3>
                         Arrow Damage
                     </h3>
+
 
                     <p>
                         Damage:
@@ -462,6 +521,7 @@
                             5
                         </strong>
                     </p>
+
 
                     <button
                         id="arrowUpgrade"
@@ -485,9 +545,11 @@
                         🏰
                     </div>
 
+
                     <h3>
                         Castle Health
                     </h3>
+
 
                     <p>
                         Max:
@@ -495,6 +557,7 @@
                             100
                         </strong>
                     </p>
+
 
                     <button
                         id="castleUpgrade"
@@ -518,9 +581,11 @@
                         🏹
                     </div>
 
+
                     <h3>
                         Archer Speed
                     </h3>
+
 
                     <p>
                         Level:
@@ -528,6 +593,7 @@
                             1
                         </strong>
                     </p>
+
 
                     <button
                         id="archerUpgrade"
@@ -551,9 +617,11 @@
                         ✨
                     </div>
 
+
                     <h3>
                         Maximum Mana
                     </h3>
+
 
                     <p>
                         Maximum:
@@ -561,6 +629,7 @@
                             100
                         </strong>
                     </p>
+
 
                     <button
                         id="manaUpgrade"
@@ -589,9 +658,11 @@
             id="mageShop"
         >
 
+
             <h2>
                 🪙 MAGE SHOP
             </h2>
+
 
             <p class="shopDescription">
                 Defeat a boss every 10 waves to earn 2 Mage Coins.
@@ -610,9 +681,11 @@
                         🔥
                     </div>
 
+
                     <h3>
                         Fire Mage
                     </h3>
+
 
                     <p>
                         Level:
@@ -621,9 +694,11 @@
                         </strong>
                     </p>
 
+
                     <p class="abilityText">
                         Burns every enemy for moderate damage.
                     </p>
+
 
                     <button
                         id="fireUpgrade"
@@ -647,9 +722,11 @@
                         ❄️
                     </div>
 
+
                     <h3>
                         Ice Mage
                     </h3>
+
 
                     <p>
                         Level:
@@ -658,9 +735,11 @@
                         </strong>
                     </p>
 
+
                     <p class="abilityText">
                         Damages and slows every enemy.
                     </p>
+
 
                     <button
                         id="iceUpgrade"
@@ -680,9 +759,11 @@
                         ⚡
                     </div>
 
+
                     <h3>
                         Storm Mage
                     </h3>
+
 
                     <p>
                         Level:
@@ -691,9 +772,11 @@
                         </strong>
                     </p>
 
+
                     <p class="abilityText">
                         Strikes several enemies with lightning.
                     </p>
+
 
                     <button
                         id="stormUpgrade"
@@ -713,9 +796,11 @@
                         ☠️
                     </div>
 
+
                     <h3>
                         Poison Mage
                     </h3>
+
 
                     <p>
                         Level:
@@ -724,9 +809,11 @@
                         </strong>
                     </p>
 
+
                     <p class="abilityText">
                         Poisons enemies and damages them over time.
                     </p>
+
 
                     <button
                         id="poisonUpgrade"
@@ -742,27 +829,40 @@
         </section>
 
 
+        <!-- ============================= -->
         <!-- MESSAGE -->
+        <!-- ============================= -->
 
         <section id="message">
-        Answer the question to begin Wave <span id="bottomWave">1</span>.
+
+            Answer the question to begin Wave
+            <span id="bottomWave">
+                1
+            </span>.
+
         </section>
 
 
+        <!-- ============================= -->
         <!-- GAME OVER -->
+        <!-- ============================= -->
 
         <section id="gameOver">
+
 
             <h1>
                 💀 CASTLE DESTROYED
             </h1>
 
+
             <p>
                 You reached Wave
+
                 <strong id="finalWave">
                     1
                 </strong>
             </p>
+
 
             <button
                 id="restartButton"
@@ -773,10 +873,12 @@
 
         </section>
 
+
     </main>
 
 
     <script src="script.js"></script>
+
 
 </body>
 
