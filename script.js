@@ -3233,12 +3233,18 @@ restartButton.addEventListener(
 // =================================
 //save game
 //==================================
+
 function saveGame() {
     const gameData = {
         wave: wave,
         gold: gold,
         mageCoins: mageCoins,
-        castleHealth: castleHealth
+        castleHealth: castleHealth,
+
+        fireLevel: fireLevel,
+        iceLevel: iceLevel,
+        stormLevel: stormLevel,
+        poisonLevel: poisonLevel
     };
 
     localStorage.setItem(
@@ -3258,13 +3264,18 @@ function loadGame() {
         gold = gameData.gold;
         mageCoins = gameData.mageCoins;
         castleHealth = gameData.castleHealth;
+
+        fireLevel = gameData.fireLevel;
+        iceLevel = gameData.iceLevel;
+        stormLevel = gameData.stormLevel;
+        poisonLevel = gameData.poisonLevel;
     }
 }
 
 
-// ================================
+// =====================================
 // START GAME
-// ================================
+// =====================================
 
 loadGame();
 
