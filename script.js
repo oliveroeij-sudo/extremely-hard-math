@@ -3,7 +3,9 @@
 // CASTLE DEFENCE GAME
 // =====================================
 
-const bottomWave = document.getElementById("bottomWave");
+const bottomWave =
+    document.getElementById("bottomWave");
+
 
 // =====================================
 // HTML ELEMENTS
@@ -202,6 +204,9 @@ const fireUpgradeCostText =
 const pauseButton =
     document.getElementById("pauseButton");
 
+const resetGameButton =
+    document.getElementById("resetGameButton");
+
 const messageText =
     document.getElementById("message");
 
@@ -263,16 +268,31 @@ let mana = 100;
 let maxMana = 100;
 
 
-// IMPORTANT:
-//
-// Mana regeneration is deliberately slow.
+// Mana regeneration.
 //
 // Timer runs every 100ms.
 //
-// 0.2 every 100ms = about 2 MP per second.
-//
+// 0.2 every 100ms =
+// about 2 MP per second.
 
 const manaRegenAmount = 0.2;
+
+
+// =====================================
+// RESPONSIVE ENEMY SPAWNING
+// =====================================
+
+// On smaller screens the battlefield itself
+// becomes narrower.
+//
+// Without this minimum width, enemies would
+// begin much closer to the castle.
+//
+// On an iPad or narrow browser, enemies may
+// therefore begin slightly off the right side
+// of the visible battlefield and move into view.
+
+const minimumEnemySpawnWidth = 1250;
 
 
 // =====================================
@@ -390,9 +410,11 @@ function prepareWave() {
     battleActive = false;
 
 
-    readyWave.textContent = wave;
+    readyWave.textContent =
+        wave;
 
-    bottomWave.textContent = wave;
+    bottomWave.textContent =
+        wave;
 
 
     answerInput.value =
@@ -434,7 +456,9 @@ function prepareWave() {
         "⏸ Mana regeneration and mage cooldowns are stopped between waves.";
 
 
-    // BOSS WARNING
+    // MAIN BOSS WARNING
+    //
+    // Wave 10, 20, 30...
 
     if (
         wave % 10 === 0
@@ -444,6 +468,21 @@ function prepareWave() {
             "👹 BOSS WAVE! Defeat the boss to earn 2 Mage Coins!";
 
     }
+
+
+    // MINI BOSS WARNING
+    //
+    // Wave 5, 15, 25...
+
+    else if (
+        wave % 5 === 0
+    ) {
+
+        bossWarning.textContent =
+            "⚔️ MINI BOSS WAVE! Defeat the mini boss to earn 2 Mage Coins!";
+
+    }
+
 
     else {
 
@@ -558,7 +597,11 @@ function beginWave() {
         "▶ Mana regeneration and cooldowns are active.";
 
 
-    // BOSS WAVE
+    // =====================================
+    // MAIN BOSS
+    //
+    // Waves 10, 20, 30...
+    // =====================================
 
     if (
         wave % 10 === 0
@@ -568,7 +611,8 @@ function beginWave() {
 
 
         createEnemy(
-            true
+            true,
+            false
         );
 
 
@@ -588,7 +632,44 @@ function beginWave() {
     }
 
 
+    // =====================================
+    // MINI BOSS
+    //
+    // Waves 5, 15, 25...
+    // =====================================
+
+    if (
+        wave % 5 === 0
+    ) {
+
+        enemiesToSpawn = 1;
+
+
+        createEnemy(
+            false,
+            true
+        );
+
+
+        enemiesSpawned = 1;
+
+        spawningFinished = true;
+
+
+        messageText.textContent =
+            "⚔️ MINI BOSS WAVE " +
+            wave +
+            "!";
+
+
+        return;
+
+    }
+
+
+    // =====================================
     // NORMAL WAVE
+    // =====================================
 
     enemiesToSpawn =
         3 +
@@ -632,6 +713,7 @@ function beginWave() {
 
 
                 createEnemy(
+                    false,
                     false
                 );
 
@@ -644,7 +726,8 @@ function beginWave() {
                     enemiesToSpawn
                 ) {
 
-                    spawningFinished = true;
+                    spawningFinished =
+                        true;
 
 
                     clearInterval(
@@ -658,7 +741,6 @@ function beginWave() {
 
             },
 
-
             750
 
         );
@@ -671,13 +753,29 @@ function beginWave() {
 // =====================================
 
 function createEnemy(
-    boss = false
+    boss = false,
+    miniBoss = false
 ) {
 
     let enemyHealth =
         25 +
         wave * 10;
 
+
+    // MINI BOSS HEALTH
+
+    if (
+        miniBoss
+    ) {
+
+        enemyHealth =
+            300 +
+            wave * 35;
+
+    }
+
+
+    // MAIN BOSS HEALTH
 
     if (
         boss
@@ -690,19 +788,68 @@ function createEnemy(
     }
 
 
-    // ENEMIES ARE 40% FASTER THAN
-    // THE PREVIOUS VERSION.
+    // NORMAL ENEMY SPEED
 
     let baseSpeed =
         0.31 +
         wave * 0.0126;
 
 
+    // MINI BOSS SPEED
+
+    if (
+        miniBoss
+    ) {
+
+        baseSpeed =
+            0.27;
+
+    }
+
+
+    // MAIN BOSS SPEED
+
     if (
         boss
     ) {
 
-        baseSpeed = 0.24;
+        baseSpeed =
+            0.24;
+
+    }
+
+
+    // =====================================
+    // RESPONSIVE SPAWN POSITION
+    // =====================================
+
+    const spawnWidth =
+        Math.max(
+            battlefield.clientWidth,
+            minimumEnemySpawnWidth
+        );
+
+
+    let spawnOffset =
+        100;
+
+
+    if (
+        miniBoss
+    ) {
+
+        spawnOffset =
+            140;
+
+    }
+
+
+    if (
+        boss
+    ) {
+
+        spawnOffset =
+            165;
 
     }
 
@@ -719,12 +866,8 @@ function createEnemy(
             enemyHealth,
 
         x:
-            battlefield.clientWidth -
-            (
-                boss
-                ? 165
-                : 100
-            ),
+            spawnWidth -
+            spawnOffset,
 
         speed:
             baseSpeed,
@@ -734,6 +877,9 @@ function createEnemy(
 
         boss:
             boss,
+
+        miniBoss:
+            miniBoss,
 
         frozen:
             0,
@@ -762,16 +908,26 @@ function createEnemy(
         );
 
 
+    // Mini bosses use the existing
+    // boss appearance so no CSS changes
+    // are required.
+
     enemyElement.className =
-        boss
+        (
+            boss ||
+            miniBoss
+        )
         ? "enemy bossEnemy"
         : "enemy";
 
 
-    // BOSS LABEL
+    // =====================================
+    // BOSS / MINI BOSS LABEL
+    // =====================================
 
     if (
-        boss
+        boss ||
+        miniBoss
     ) {
 
         const bossLabel =
@@ -784,8 +940,21 @@ function createEnemy(
             "bossLabel";
 
 
-        bossLabel.textContent =
-            "👑 BOSS";
+        if (
+            boss
+        ) {
+
+            bossLabel.textContent =
+                "👑 BOSS";
+
+        }
+
+        else {
+
+            bossLabel.textContent =
+                "⚔️ MINI BOSS";
+
+        }
 
 
         enemyElement.appendChild(
@@ -836,7 +1005,8 @@ function createEnemy(
 
 
     if (
-        boss
+        boss ||
+        miniBoss
     ) {
 
         body.className =
@@ -1004,7 +1174,8 @@ function moveEnemies() {
                     enemy.frozen > 0
                 ) {
 
-                    speed *= 0.42;
+                    speed *=
+                        0.42;
 
                 }
 
@@ -1078,11 +1249,26 @@ function enemyHitCastle(
         );
 
 
+    // MINI BOSS DAMAGE
+
+    if (
+        enemy.miniBoss
+    ) {
+
+        damage *=
+            2;
+
+    }
+
+
+    // MAIN BOSS DAMAGE
+
     if (
         enemy.boss
     ) {
 
-        damage *= 3;
+        damage *=
+            3;
 
     }
 
@@ -1095,7 +1281,8 @@ function enemyHitCastle(
         castleHealth < 0
     ) {
 
-        castleHealth = 0;
+        castleHealth =
+            0;
 
     }
 
@@ -1206,7 +1393,10 @@ function getClosestEnemy() {
 
         function(a, b) {
 
-            return a.x - b.x;
+            return (
+                a.x -
+                b.x
+            );
 
         }
 
@@ -1255,12 +1445,15 @@ function shootArrow(
     );
 
 
-    const startX = 210;
+    const startX =
+        210;
 
-    const startY = 245;
+    const startY =
+        245;
 
 
-    let progress = 0;
+    let progress =
+        0;
 
 
     function animateArrow() {
@@ -1290,7 +1483,8 @@ function shootArrow(
         }
 
 
-        progress += 0.035;
+        progress +=
+            0.035;
 
 
         const targetX =
@@ -1396,7 +1590,8 @@ function damageEnemy(
         enemy.health < 0
     ) {
 
-        enemy.health = 0;
+        enemy.health =
+            0;
 
     }
 
@@ -1463,6 +1658,10 @@ function killEnemy(
         );
 
 
+    // =====================================
+    // MAIN BOSS REWARD
+    // =====================================
+
     if (
         enemy.boss
     ) {
@@ -1472,14 +1671,37 @@ function killEnemy(
             wave * 2;
 
 
-        // BOSS MAGE COINS
-
         mageCoins +=
             2;
 
 
         messageText.textContent =
             "👑 BOSS DEFEATED! +" +
+            reward +
+            " Gold and +2 Mage Coins!";
+
+    }
+
+
+    // =====================================
+    // MINI BOSS REWARD
+    // =====================================
+
+    else if (
+        enemy.miniBoss
+    ) {
+
+        reward =
+            25 +
+            wave;
+
+
+        mageCoins +=
+            2;
+
+
+        messageText.textContent =
+            "⚔️ MINI BOSS DEFEATED! +" +
             reward +
             " Gold and +2 Mage Coins!";
 
@@ -1541,7 +1763,8 @@ function removeEnemy(
         enemiesAlive < 0
     ) {
 
-        enemiesAlive = 0;
+        enemiesAlive =
+            0;
 
     }
 
@@ -1557,8 +1780,12 @@ function removeEnemy(
 
 function checkWaveComplete() {
 
+    // Do not complete/heal the wave
+    // if the castle has been destroyed.
+
     if (
-        !battleActive
+        !battleActive ||
+        castleHealth <= 0
     ) {
 
         return;
@@ -1575,27 +1802,14 @@ function checkWaveComplete() {
             false;
 
 
-        // =====================================
-        // FULL HEAL + FULL MANA AFTER EACH WAVE
-        // =====================================
+        // FULL HEAL + FULL MANA
 
         castleHealth =
             maxCastleHealth;
 
+
         mana =
             maxMana;
-
-
-        // IMPORTANT:
-        // Mage cooldowns are NOT reset here.
-        //
-        // They stay exactly where they are.
-        //
-        // Because battleActive is now false,
-        // the cooldown timer also stops.
-        //
-        // When the next battle starts,
-        // they continue counting down.
 
 
         manaStatus.textContent =
@@ -1759,9 +1973,6 @@ function castFire() {
         fireCooldownMax;
 
 
-    // Intentionally much weaker
-    // than earlier versions.
-
     const damage =
         7 +
         fireLevel * 5;
@@ -1915,8 +2126,6 @@ function castStorm() {
         stormCooldownMax;
 
 
-    // Reduced from huge damage.
-
     const damage =
         10 +
         stormLevel * 6;
@@ -1937,7 +2146,10 @@ function castStorm() {
 
             function(a, b) {
 
-                return a.x - b.x;
+                return (
+                    a.x -
+                    b.x
+                );
 
             }
 
@@ -2114,14 +2326,6 @@ setInterval(
 
     function() {
 
-        // VERY IMPORTANT:
-        //
-        // This only runs during an
-        // active battle.
-        //
-        // Therefore mana and cooldowns
-        // completely stop between waves.
-
         if (
             !gameRunning ||
             gamePaused ||
@@ -2210,7 +2414,8 @@ setInterval(
                         enemy.frozen < 0
                     ) {
 
-                        enemy.frozen = 0;
+                        enemy.frozen =
+                            0;
 
                     }
 
@@ -2241,7 +2446,8 @@ setInterval(
                         enemy.poisonTime < 0
                     ) {
 
-                        enemy.poisonTime = 0;
+                        enemy.poisonTime =
+                            0;
 
                     }
 
@@ -2286,7 +2492,8 @@ function reduceTimer(
         timer < 0
     ) {
 
-        timer = 0;
+        timer =
+            0;
 
     }
 
@@ -2335,7 +2542,6 @@ arrowUpgrade.addEventListener(
 
         saveGame();
 
-
         updateUI();
 
     }
@@ -2380,7 +2586,6 @@ castleUpgrade.addEventListener(
 
         saveGame();
 
-
         updateUI();
 
     }
@@ -2419,7 +2624,6 @@ archerUpgrade.addEventListener(
 
 
         saveGame();
-
 
         updateUI();
 
@@ -2465,7 +2669,6 @@ manaUpgrade.addEventListener(
 
         saveGame();
 
-
         updateUI();
 
     }
@@ -2504,7 +2707,6 @@ fireUpgrade.addEventListener(
 
 
         saveGame();
-
 
         updateUI();
 
@@ -2581,7 +2783,6 @@ iceUpgrade.addEventListener(
 
         saveGame();
 
-
         updateUI();
 
     }
@@ -2656,7 +2857,6 @@ stormUpgrade.addEventListener(
 
 
         saveGame();
-
 
         updateUI();
 
@@ -2733,7 +2933,6 @@ poisonUpgrade.addEventListener(
 
         saveGame();
 
-
         updateUI();
 
     }
@@ -2782,7 +2981,7 @@ function spendMageCoins(
     ) {
 
         messageText.textContent =
-            "🪙 Not enough Mage Coins! Defeat bosses to earn more.";
+            "🪙 Not enough Mage Coins! Defeat mini bosses and bosses to earn more.";
 
         return false;
 
@@ -2991,13 +3190,11 @@ function updateUI() {
         poisonLevel;
 
 
-    // FIRE UPGRADE COST
-
     fireUpgradeCostText.textContent =
         fireUpgradeCost;
 
 
-    // ICE SHOP BUTTON
+    // ICE
 
     if (
         iceUnlocked
@@ -3018,7 +3215,7 @@ function updateUI() {
     }
 
 
-    // STORM SHOP BUTTON
+    // STORM
 
     if (
         stormUnlocked
@@ -3039,7 +3236,7 @@ function updateUI() {
     }
 
 
-    // POISON SHOP BUTTON
+    // POISON
 
     if (
         poisonUnlocked
@@ -3071,71 +3268,39 @@ function updateUI() {
 
 function updateMageButtons() {
 
-    // FIRE
-
     updateOneMage(
-
         fireMageButton,
-
         fireCooldownText,
-
         fireUnlocked,
-
         fireCooldown,
-
         fireManaCost
-
     );
 
 
-    // ICE
-
     updateOneMage(
-
         iceMageButton,
-
         iceCooldownText,
-
         iceUnlocked,
-
         iceCooldown,
-
         iceManaCost
-
     );
 
 
-    // STORM
-
     updateOneMage(
-
         stormMageButton,
-
         stormCooldownText,
-
         stormUnlocked,
-
         stormCooldown,
-
         stormManaCost
-
     );
 
 
-    // POISON
-
     updateOneMage(
-
         poisonMageButton,
-
         poisonCooldownText,
-
         poisonUnlocked,
-
         poisonCooldown,
-
         poisonManaCost
-
     );
 
 }
@@ -3175,8 +3340,6 @@ function updateOneMage(
         "lockedMage"
     );
 
-
-    // COOLDOWN DISPLAY
 
     if (
         cooldown > 0
@@ -3266,21 +3429,46 @@ function gameOver() {
 
 
 // =====================================
-// RESTART
+// RESTART GAME
 // =====================================
+
+function restartGame() {
+
+    // Setting gameRunning false prevents
+    // the beforeunload save from immediately
+    // saving the game again.
+
+    gameRunning =
+        false;
+
+
+    battleActive =
+        false;
+
+
+    localStorage.removeItem(
+        "extremelyHardMathSave"
+    );
+
+
+    location.reload();
+
+}
+
+
+// TOP RESTART BUTTON
+
+resetGameButton.addEventListener(
+    "click",
+    restartGame
+);
+
+
+// GAME OVER PLAY AGAIN BUTTON
 
 restartButton.addEventListener(
     "click",
-    function() {
-
-        localStorage.removeItem(
-            "extremelyHardMathSave"
-        );
-
-
-        location.reload();
-
-    }
+    restartGame
 );
 
 
@@ -3329,6 +3517,21 @@ function saveGame() {
 
         maxMana:
             maxMana,
+
+
+        // COOLDOWNS
+
+        fireCooldown:
+            fireCooldown,
+
+        iceCooldown:
+            iceCooldown,
+
+        stormCooldown:
+            stormCooldown,
+
+        poisonCooldown:
+            poisonCooldown,
 
 
         // NORMAL SHOP COSTS
@@ -3486,6 +3689,28 @@ function loadGame() {
         maxMana;
 
 
+    // COOLDOWNS
+
+    fireCooldown =
+        gameData.fireCooldown ??
+        fireCooldown;
+
+
+    iceCooldown =
+        gameData.iceCooldown ??
+        iceCooldown;
+
+
+    stormCooldown =
+        gameData.stormCooldown ??
+        stormCooldown;
+
+
+    poisonCooldown =
+        gameData.poisonCooldown ??
+        poisonCooldown;
+
+
     // NORMAL SHOP COSTS
 
     arrowCost =
@@ -3572,6 +3797,26 @@ function loadGame() {
         poisonUpgradeCost;
 
 }
+
+
+// =====================================
+// SAVE WHEN PAGE IS REFRESHED
+// =====================================
+
+window.addEventListener(
+    "beforeunload",
+    function() {
+
+        if (
+            gameRunning
+        ) {
+
+            saveGame();
+
+        }
+
+    }
+);
 
 
 // =====================================
