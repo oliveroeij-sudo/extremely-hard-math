@@ -1,9 +1,20 @@
+/* ===================================== */
+/* EVERYTHING */
+/* ===================================== */
+
 * {
-    box-sizing: border-box;
+    box-sizing:
+        border-box;
 }
 
+
+/* ===================================== */
+/* BODY */
+/* ===================================== */
+
 body {
-    margin: 0;
+    margin:
+        0;
 
     font-family:
         Arial,
@@ -16,7 +27,8 @@ body {
             #080d16
         );
 
-    color: white;
+    color:
+        white;
 }
 
 
@@ -25,16 +37,20 @@ body {
 /* ===================================== */
 
 #topBar {
-    min-height: 72px;
+    min-height:
+        72px;
 
     padding:
         0 25px;
 
-    display: flex;
+    display:
+        flex;
 
-    align-items: center;
+    align-items:
+        center;
 
-    justify-content: space-between;
+    justify-content:
+        space-between;
 
     background:
         linear-gradient(
@@ -47,40 +63,62 @@ body {
 
     box-shadow:
         0 5px 12px
-        rgba(0, 0, 0, 0.5);
+        rgba(
+            0,
+            0,
+            0,
+            0.5
+        );
 }
+
 
 #gameTitle {
-    font-size: 26px;
+    margin:
+        0;
 
-    font-weight: 900;
+    font-size:
+        26px;
 
-    letter-spacing: 1px;
+    font-weight:
+        900;
+
+    letter-spacing:
+        1px;
 }
+
 
 #topStats {
-    display: flex;
+    display:
+        flex;
 
-    align-items: center;
+    align-items:
+        center;
 
-    gap: 22px;
+    gap:
+        18px;
 
-    font-size: 19px;
+    font-size:
+        19px;
 
-    font-weight: bold;
+    font-weight:
+        bold;
 }
 
 
-/* PAUSE */
+/* ===================================== */
+/* PAUSE + RESTART */
+/* ===================================== */
 
-#pauseButton {
+#pauseButton,
+#resetGameButton {
     padding:
         10px 16px;
 
     border:
         3px solid #5d4218;
 
-    border-radius: 8px;
+    border-radius:
+        8px;
 
     background:
         linear-gradient(
@@ -88,11 +126,245 @@ body {
             #c58f2d
         );
 
-    color: #241805;
+    color:
+        #241805;
 
-    font-weight: 900;
+    font-weight:
+        900;
 
-    cursor: pointer;
+    cursor:
+        pointer;
+}
+
+
+#resetGameButton {
+    background:
+        linear-gradient(
+            #ef8372,
+            #b83d32
+        );
+
+    color:
+        white;
+
+    border-color:
+        #6b201b;
+}
+
+
+#pauseButton:hover,
+#resetGameButton:hover {
+    filter:
+        brightness(
+            1.12
+        );
+}
+
+
+/* ===================================== */
+/* MAGE COIN CODE PANEL */
+/* ===================================== */
+
+#codePanel {
+    width:
+        min(
+            1300px,
+            96%
+        );
+
+    margin:
+        16px auto 0;
+
+    padding:
+        16px;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(
+            2,
+            1fr
+        );
+
+    gap:
+        14px;
+
+    background:
+        linear-gradient(
+            #2d3440,
+            #171b21
+        );
+
+    border:
+        3px solid #b48a3e;
+
+    border-radius:
+        12px;
+
+    box-shadow:
+        0 6px 15px
+        rgba(
+            0,
+            0,
+            0,
+            0.4
+        );
+}
+
+
+.codeBox {
+    padding:
+        14px;
+
+    background:
+        linear-gradient(
+            #4a5361,
+            #272d35
+        );
+
+    border:
+        2px solid #80673d;
+
+    border-radius:
+        10px;
+}
+
+
+.codeBox h3 {
+    margin:
+        0 0 7px;
+
+    color:
+        #ffd36a;
+
+    font-size:
+        18px;
+}
+
+
+.codeBox p {
+    margin:
+        6px 0 10px;
+
+    color:
+        #dddddd;
+
+    font-size:
+        13px;
+}
+
+
+.codeControls {
+    display:
+        flex;
+
+    gap:
+        8px;
+}
+
+
+.codeControls input {
+    flex:
+        1;
+
+    min-width:
+        0;
+
+    padding:
+        10px;
+
+    border:
+        2px solid #725723;
+
+    border-radius:
+        7px;
+
+    background:
+        #f5f5f5;
+
+    color:
+        #151515;
+
+    font-size:
+        16px;
+}
+
+
+.codeControls button {
+    padding:
+        10px 15px;
+
+    border:
+        2px solid #5d4214;
+
+    border-radius:
+        7px;
+
+    background:
+        linear-gradient(
+            #f0c75d,
+            #ba8728
+        );
+
+    color:
+        #251a08;
+
+    font-weight:
+        900;
+
+    cursor:
+        pointer;
+}
+
+
+.codeControls button:hover {
+    filter:
+        brightness(
+            1.12
+        );
+}
+
+
+#newCodeArea {
+    margin-top:
+        14px;
+
+    padding-top:
+        12px;
+
+    border-top:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.25
+        );
+}
+
+
+#mageCodeMessage {
+    grid-column:
+        1 / -1;
+
+    min-height:
+        24px;
+
+    padding:
+        5px;
+
+    text-align:
+        center;
+
+    color:
+        #ffd76a;
+
+    font-size:
+        15px;
+
+    font-weight:
+        900;
 }
 
 
@@ -107,7 +379,8 @@ body {
             96%
         );
 
-    margin: auto;
+    margin:
+        auto;
 
     padding:
         20px 0 40px;
@@ -119,16 +392,20 @@ body {
 /* ===================================== */
 
 #battlefield {
-    position: relative;
+    position:
+        relative;
 
-    height: 525px;
+    height:
+        525px;
 
-    overflow: hidden;
+    overflow:
+        hidden;
 
     border:
         6px solid #392a1e;
 
-    border-radius: 16px;
+    border-radius:
+        16px;
 
     background:
         linear-gradient(
@@ -140,7 +417,12 @@ body {
 
     box-shadow:
         0 10px 25px
-        rgba(0, 0, 0, 0.5);
+        rgba(
+            0,
+            0,
+            0,
+            0.5
+        );
 }
 
 
@@ -149,18 +431,23 @@ body {
 /* ===================================== */
 
 .mountain {
-    position: absolute;
+    position:
+        absolute;
 
-    bottom: 145px;
+    bottom:
+        145px;
 
-    width: 330px;
+    width:
+        330px;
 
-    height: 190px;
+    height:
+        190px;
 
     background:
         #77939a;
 
-    opacity: 0.48;
+    opacity:
+        0.48;
 
     clip-path:
         polygon(
@@ -170,31 +457,44 @@ body {
         );
 }
 
+
 .mountain1 {
-    left: 250px;
+    left:
+        250px;
 }
+
 
 .mountain2 {
-    left: 550px;
+    left:
+        550px;
 
     transform:
-        scale(1.2);
+        scale(
+            1.2
+        );
 }
 
+
 .mountain3 {
-    right: 20px;
+    right:
+        20px;
 
     transform:
-        scale(0.85);
+        scale(
+            0.85
+        );
 }
 
 
 .cloud {
-    position: absolute;
+    position:
+        absolute;
 
-    width: 145px;
+    width:
+        145px;
 
-    height: 38px;
+    height:
+        38px;
 
     background:
         rgba(
@@ -208,47 +508,68 @@ body {
         100px;
 }
 
+
 .cloud::before,
 .cloud::after {
-    content: "";
+    content:
+        "";
 
-    position: absolute;
+    position:
+        absolute;
 
-    border-radius: 50%;
+    border-radius:
+        50%;
 
-    background: white;
+    background:
+        white;
 }
+
 
 .cloud::before {
-    width: 65px;
+    width:
+        65px;
 
-    height: 65px;
+    height:
+        65px;
 
-    top: -30px;
+    top:
+        -30px;
 
-    left: 20px;
+    left:
+        20px;
 }
+
 
 .cloud::after {
-    width: 80px;
+    width:
+        80px;
 
-    height: 80px;
+    height:
+        80px;
 
-    top: -43px;
+    top:
+        -43px;
 
-    right: 15px;
+    right:
+        15px;
 }
+
 
 .cloud1 {
-    top: 70px;
+    top:
+        70px;
 
-    left: 360px;
+    left:
+        360px;
 }
 
-.cloud2 {
-    top: 120px;
 
-    right: 160px;
+.cloud2 {
+    top:
+        120px;
+
+    right:
+        160px;
 }
 
 
@@ -257,15 +578,20 @@ body {
 /* ===================================== */
 
 #ground {
-    position: absolute;
+    position:
+        absolute;
 
-    bottom: 0;
+    bottom:
+        0;
 
-    left: 0;
+    left:
+        0;
 
-    width: 100%;
+    width:
+        100%;
 
-    height: 72px;
+    height:
+        72px;
 
     background:
         repeating-linear-gradient(
@@ -286,29 +612,39 @@ body {
 /* ===================================== */
 
 #castleArea {
-    position: absolute;
+    position:
+        absolute;
 
-    left: 18px;
+    left:
+        18px;
 
-    bottom: 60px;
+    bottom:
+        60px;
 
-    width: 300px;
+    width:
+        300px;
 
-    z-index: 15;
+    z-index:
+        15;
 }
 
 
+/* ===================================== */
 /* CASTLE HEALTH */
+/* ===================================== */
 
 #castleHealthBar {
-    width: 230px;
+    width:
+        230px;
 
-    height: 21px;
+    height:
+        21px;
 
     margin:
         0 auto;
 
-    background: #4c1616;
+    background:
+        #4c1616;
 
     border:
         3px solid white;
@@ -316,13 +652,17 @@ body {
     border-radius:
         15px;
 
-    overflow: hidden;
+    overflow:
+        hidden;
 }
 
-#castleHealthFill {
-    width: 100%;
 
-    height: 100%;
+#castleHealthFill {
+    width:
+        100%;
+
+    height:
+        100%;
 
     background:
         linear-gradient(
@@ -331,12 +671,16 @@ body {
         );
 }
 
+
 #castleHealthText {
-    text-align: center;
+    text-align:
+        center;
 
-    margin-top: 4px;
+    margin-top:
+        4px;
 
-    font-weight: bold;
+    font-weight:
+        bold;
 
     text-shadow:
         2px 2px 2px black;
@@ -348,24 +692,32 @@ body {
 /* ===================================== */
 
 #castle {
-    position: relative;
+    position:
+        relative;
 
-    height: 255px;
+    height:
+        255px;
 
-    margin-top: 5px;
+    margin-top:
+        5px;
 }
 
 
 .mainTower {
-    position: absolute;
+    position:
+        absolute;
 
-    width: 170px;
+    width:
+        170px;
 
-    height: 210px;
+    height:
+        210px;
 
-    left: 65px;
+    left:
+        65px;
 
-    bottom: 0;
+    bottom:
+        0;
 
     background:
         linear-gradient(
@@ -381,13 +733,17 @@ body {
 
 
 .sideTower {
-    position: absolute;
+    position:
+        absolute;
 
-    width: 88px;
+    width:
+        88px;
 
-    height: 170px;
+    height:
+        170px;
 
-    bottom: 0;
+    bottom:
+        0;
 
     background:
         linear-gradient(
@@ -402,27 +758,35 @@ body {
 
 
 .leftTower {
-    left: 0;
+    left:
+        0;
 }
 
 
 .rightTower {
-    right: 0;
+    right:
+        0;
 }
 
 
 .roof {
-    position: absolute;
+    position:
+        absolute;
 
-    width: 110px;
+    width:
+        110px;
 
-    height: 75px;
+    height:
+        75px;
 
-    left: -16px;
+    left:
+        -16px;
 
-    top: -70px;
+    top:
+        -70px;
 
-    background: #8c3434;
+    background:
+        #8c3434;
 
     clip-path:
         polygon(
@@ -434,22 +798,29 @@ body {
 
 
 .battlements {
-    position: absolute;
+    position:
+        absolute;
 
-    top: -32px;
+    top:
+        -32px;
 
-    width: 100%;
+    width:
+        100%;
 
-    display: flex;
+    display:
+        flex;
 
     justify-content:
         space-around;
 }
 
-.battlements div {
-    width: 30px;
 
-    height: 38px;
+.battlements div {
+    width:
+        30px;
+
+    height:
+        38px;
 
     background:
         #b7afa6;
@@ -457,16 +828,20 @@ body {
     border:
         4px solid #5e5751;
 
-    border-bottom: none;
+    border-bottom:
+        none;
 }
 
 
 .castleWindow {
-    width: 25px;
+    width:
+        25px;
 
-    height: 39px;
+    height:
+        39px;
 
-    background: #24354e;
+    background:
+        #24354e;
 
     border:
         4px solid #5e5751;
@@ -477,43 +852,56 @@ body {
 
 
 .sideTower .castleWindow {
-    position: absolute;
+    position:
+        absolute;
 
-    top: 55px;
+    top:
+        55px;
 
-    left: 26px;
+    left:
+        26px;
 }
 
 
 .mainTower .castleWindow {
-    position: absolute;
+    position:
+        absolute;
 
-    top: 55px;
+    top:
+        55px;
 }
 
 
 .windowLeft {
-    left: 30px;
+    left:
+        30px;
 }
 
 
 .windowRight {
-    right: 30px;
+    right:
+        30px;
 }
 
 
 .castleDoor {
-    position: absolute;
+    position:
+        absolute;
 
-    left: 54px;
+    left:
+        54px;
 
-    bottom: 0;
+    bottom:
+        0;
 
-    width: 55px;
+    width:
+        55px;
 
-    height: 80px;
+    height:
+        80px;
 
-    background: #37261a;
+    background:
+        #37261a;
 
     border:
         4px solid #5e5751;
@@ -528,36 +916,47 @@ body {
 /* ===================================== */
 
 #mageRow {
-    position: absolute;
+    position:
+        absolute;
 
-    z-index: 50;
+    z-index:
+        50;
 
-    top: 52px;
+    top:
+        52px;
 
-    left: 12px;
+    left:
+        12px;
 
-    width: 276px;
+    width:
+        276px;
 
-    display: flex;
+    display:
+        flex;
 
     justify-content:
         space-between;
 
-    gap: 5px;
+    gap:
+        5px;
 }
 
 
 .mage {
-    position: relative;
+    position:
+        relative;
 
-    width: 66px;
+    width:
+        66px;
 
-    min-height: 92px;
+    min-height:
+        92px;
 
     padding:
         4px 3px 19px;
 
-    color: white;
+    color:
+        white;
 
     border:
         3px solid
@@ -568,15 +967,23 @@ body {
             0.8
         );
 
-    border-radius: 11px;
+    border-radius:
+        11px;
 
-    cursor: pointer;
+    cursor:
+        pointer;
 
-    overflow: hidden;
+    overflow:
+        hidden;
 
     box-shadow:
         0 4px 7px
-        rgba(0, 0, 0, 0.55);
+        rgba(
+            0,
+            0,
+            0,
+            0.55
+        );
 }
 
 
@@ -616,26 +1023,45 @@ body {
 }
 
 
+.ultimateMage {
+    background:
+        linear-gradient(
+            #fff36a,
+            #a05bc9
+        );
+
+    color:
+        #25153a;
+}
+
+
 .mageIcon {
-    font-size: 29px;
+    font-size:
+        29px;
 }
 
 
 .mageName {
-    font-size: 10px;
+    font-size:
+        10px;
 
-    font-weight: 900;
+    font-weight:
+        900;
 }
 
 
 .mpTag {
-    position: absolute;
+    position:
+        absolute;
 
-    bottom: 0;
+    bottom:
+        0;
 
-    left: 0;
+    left:
+        0;
 
-    width: 100%;
+    width:
+        100%;
 
     padding:
         3px 1px;
@@ -648,11 +1074,14 @@ body {
             0.92
         );
 
-    color: #78d8ff;
+    color:
+        #78d8ff;
 
-    font-size: 10px;
+    font-size:
+        10px;
 
-    font-weight: 900;
+    font-weight:
+        900;
 
     border-top:
         1px solid
@@ -666,21 +1095,31 @@ body {
 
 
 .cooldownOverlay {
-    position: absolute;
+    position:
+        absolute;
 
-    left: 0;
+    left:
+        0;
 
-    top: 0;
+    top:
+        0;
 
-    width: 100%;
+    width:
+        100%;
 
-    height: calc(100% - 18px);
+    height:
+        calc(
+            100% - 18px
+        );
 
-    display: flex;
+    display:
+        flex;
 
-    align-items: center;
+    align-items:
+        center;
 
-    justify-content: center;
+    justify-content:
+        center;
 
     background:
         rgba(
@@ -690,24 +1129,31 @@ body {
             0.70
         );
 
-    font-size: 18px;
+    font-size:
+        18px;
 
-    font-weight: 900;
+    font-weight:
+        900;
 
-    pointer-events: none;
+    pointer-events:
+        none;
 }
 
 
 .cooldownOverlay:empty {
-    display: none;
+    display:
+        none;
 }
 
 
 .lockedMage {
     filter:
-        grayscale(0.75);
+        grayscale(
+            0.75
+        );
 
-    opacity: 0.65;
+    opacity:
+        0.65;
 }
 
 
@@ -716,27 +1162,35 @@ body {
 /* ===================================== */
 
 .enemy {
-    position: absolute;
+    position:
+        absolute;
 
-    bottom: 73px;
+    bottom:
+        73px;
 
-    width: 95px;
+    width:
+        95px;
 
-    z-index: 10;
+    z-index:
+        10;
 
-    text-align: center;
+    text-align:
+        center;
 }
 
 
 .enemyHealthBar {
-    width: 80px;
+    width:
+        80px;
 
-    height: 12px;
+    height:
+        12px;
 
     margin:
         0 auto;
 
-    background: #541414;
+    background:
+        #541414;
 
     border:
         2px solid white;
@@ -744,14 +1198,17 @@ body {
     border-radius:
         10px;
 
-    overflow: hidden;
+    overflow:
+        hidden;
 }
 
 
 .enemyHealthFill {
-    width: 100%;
+    width:
+        100%;
 
-    height: 100%;
+    height:
+        100%;
 
     background:
         linear-gradient(
@@ -762,11 +1219,14 @@ body {
 
 
 .enemyHealthText {
-    margin-top: 2px;
+    margin-top:
+        2px;
 
-    font-size: 12px;
+    font-size:
+        12px;
 
-    font-weight: bold;
+    font-weight:
+        bold;
 
     text-shadow:
         1px 1px black;
@@ -774,11 +1234,14 @@ body {
 
 
 .enemyBody {
-    position: relative;
+    position:
+        relative;
 
-    width: 68px;
+    width:
+        68px;
 
-    height: 76px;
+    height:
+        76px;
 
     margin:
         6px auto 0;
@@ -834,58 +1297,77 @@ body {
 
 
 .enemyEye {
-    position: absolute;
+    position:
+        absolute;
 
-    top: 25px;
+    top:
+        25px;
 
-    width: 13px;
+    width:
+        13px;
 
-    height: 14px;
+    height:
+        14px;
 
-    border-radius: 50%;
+    border-radius:
+        50%;
 
-    background: white;
+    background:
+        white;
 }
 
 
 .enemyEye.left {
-    left: 13px;
+    left:
+        13px;
 }
 
 
 .enemyEye.right {
-    right: 13px;
+    right:
+        13px;
 }
 
 
 .enemyEye::after {
-    content: "";
+    content:
+        "";
 
-    display: block;
+    display:
+        block;
 
-    width: 5px;
+    width:
+        5px;
 
-    height: 5px;
+    height:
+        5px;
 
     margin:
         5px auto;
 
-    border-radius: 50%;
+    border-radius:
+        50%;
 
-    background: black;
+    background:
+        black;
 }
 
 
 .enemyMouth {
-    position: absolute;
+    position:
+        absolute;
 
-    width: 27px;
+    width:
+        27px;
 
-    height: 10px;
+    height:
+        10px;
 
-    left: 17px;
+    left:
+        17px;
 
-    bottom: 12px;
+    bottom:
+        12px;
 
     border-bottom:
         5px solid white;
@@ -896,15 +1378,20 @@ body {
 
 
 .horn {
-    position: absolute;
+    position:
+        absolute;
 
-    width: 20px;
+    width:
+        20px;
 
-    height: 25px;
+    height:
+        25px;
 
-    top: -18px;
+    top:
+        -18px;
 
-    background: #dfc46e;
+    background:
+        #dfc46e;
 
     clip-path:
         polygon(
@@ -916,35 +1403,43 @@ body {
 
 
 .horn.left {
-    left: 0;
+    left:
+        0;
 
     transform:
-        rotate(-25deg);
+        rotate(
+            -25deg
+        );
 }
 
 
 .horn.right {
-    right: 0;
+    right:
+        0;
 
     transform:
-        rotate(25deg);
+        rotate(
+            25deg
+        );
 }
 
 
 /* ===================================== */
-/* BOSS */
+/* BOSSES */
 /* ===================================== */
 
 .enemy.bossEnemy {
-    width: 145px;
+    width:
+        145px;
 }
 
 
-.enemy.bossEnemy
-.enemyHealthBar {
-    width: 125px;
+.enemy.bossEnemy .enemyHealthBar {
+    width:
+        125px;
 
-    height: 16px;
+    height:
+        16px;
 
     border:
         3px solid #ffe684;
@@ -952,11 +1447,14 @@ body {
 
 
 .bossBody {
-    width: 115px;
+    width:
+        115px;
 
-    height: 130px;
+    height:
+        130px;
 
-    border-width: 6px;
+    border-width:
+        6px;
 
     background:
         linear-gradient(
@@ -975,54 +1473,63 @@ body {
 }
 
 
-.bossBody
-.enemyEye {
-    top: 43px;
+.bossBody .enemyEye {
+    top:
+        43px;
 
-    width: 18px;
+    width:
+        18px;
 
-    height: 19px;
+    height:
+        19px;
 }
 
 
-.bossBody
-.enemyEye.left {
-    left: 23px;
+.bossBody .enemyEye.left {
+    left:
+        23px;
 }
 
 
-.bossBody
-.enemyEye.right {
-    right: 23px;
+.bossBody .enemyEye.right {
+    right:
+        23px;
 }
 
 
-.bossBody
-.enemyMouth {
-    width: 45px;
+.bossBody .enemyMouth {
+    width:
+        45px;
 
-    left: 29px;
+    left:
+        29px;
 
-    bottom: 19px;
+    bottom:
+        19px;
 }
 
 
-.bossBody
-.horn {
-    width: 30px;
+.bossBody .horn {
+    width:
+        30px;
 
-    height: 40px;
+    height:
+        40px;
 
-    top: -31px;
+    top:
+        -31px;
 }
 
 
 .bossLabel {
-    color: #ffe578;
+    color:
+        #ffe578;
 
-    font-size: 13px;
+    font-size:
+        13px;
 
-    font-weight: 900;
+    font-weight:
+        900;
 
     text-shadow:
         2px 2px black;
@@ -1034,24 +1541,32 @@ body {
 /* ===================================== */
 
 .arrow {
-    position: absolute;
+    position:
+        absolute;
 
-    z-index: 40;
+    z-index:
+        40;
 
-    font-size: 28px;
+    font-size:
+        28px;
 
-    pointer-events: none;
+    pointer-events:
+        none;
 }
 
 
 .spellEffect {
-    position: absolute;
+    position:
+        absolute;
 
-    z-index: 60;
+    z-index:
+        60;
 
-    font-size: 55px;
+    font-size:
+        55px;
 
-    pointer-events: none;
+    pointer-events:
+        none;
 }
 
 
@@ -1060,20 +1575,25 @@ body {
 /* ===================================== */
 
 #waveStartPanel {
-    position: absolute;
+    position:
+        absolute;
 
-    z-index: 100;
+    z-index:
+        100;
 
-    width: 390px;
+    width:
+        390px;
 
     max-width:
         calc(
             100% - 30px
         );
 
-    left: 50%;
+    left:
+        50%;
 
-    top: 50%;
+    top:
+        50%;
 
     transform:
         translate(
@@ -1081,11 +1601,14 @@ body {
             -50%
         );
 
-    padding: 25px;
+    padding:
+        25px;
 
-    text-align: center;
+    text-align:
+        center;
 
-    color: #251809;
+    color:
+        #251809;
 
     background:
         linear-gradient(
@@ -1096,7 +1619,8 @@ body {
     border:
         6px solid #65451b;
 
-    border-radius: 15px;
+    border-radius:
+        15px;
 
     box-shadow:
         0 12px 30px
@@ -1110,22 +1634,29 @@ body {
 
 
 #waveStartTitle {
-    font-size: 32px;
+    font-size:
+        32px;
 
-    font-weight: 900;
+    font-weight:
+        900;
 }
 
 
 #bossWarning {
-    min-height: 25px;
+    min-height:
+        25px;
 
-    margin-top: 5px;
+    margin-top:
+        5px;
 
-    color: #a61d1d;
+    color:
+        #a61d1d;
 
-    font-size: 20px;
+    font-size:
+        20px;
 
-    font-weight: 900;
+    font-weight:
+        900;
 }
 
 
@@ -1133,46 +1664,59 @@ body {
     margin:
         15px 0;
 
-    font-size: 43px;
+    font-size:
+        43px;
 
-    font-weight: 900;
+    font-weight:
+        900;
 }
 
 
 #questionControls {
-    display: flex;
+    display:
+        flex;
 
-    gap: 8px;
+    gap:
+        8px;
 }
 
 
 #answer {
-    width: 125px;
+    width:
+        125px;
 
-    min-width: 0;
+    min-width:
+        0;
 
-    padding: 12px;
+    padding:
+        12px;
 
     border:
         3px solid #523816;
 
-    border-radius: 7px;
+    border-radius:
+        7px;
 
-    text-align: center;
+    text-align:
+        center;
 
-    font-size: 22px;
+    font-size:
+        22px;
 }
 
 
 #startWaveButton {
-    flex: 1;
+    flex:
+        1;
 
-    padding: 12px;
+    padding:
+        12px;
 
     border:
         3px solid #721d1d;
 
-    border-radius: 7px;
+    border-radius:
+        7px;
 
     background:
         linear-gradient(
@@ -1180,33 +1724,42 @@ body {
             #af2828
         );
 
-    color: white;
+    color:
+        white;
 
-    font-size: 16px;
+    font-size:
+        16px;
 
-    font-weight: 900;
+    font-weight:
+        900;
 
-    cursor: pointer;
+    cursor:
+        pointer;
 }
 
 
 #questionMessage {
-    min-height: 22px;
+    min-height:
+        22px;
 
-    margin-top: 10px;
+    margin-top:
+        10px;
 
-    font-weight: bold;
+    font-weight:
+        bold;
 }
 
 
 /* ===================================== */
-/* STATS */
+/* BATTLE STATS */
 /* ===================================== */
 
 #battleStats {
-    margin-top: 15px;
+    margin-top:
+        15px;
 
-    display: grid;
+    display:
+        grid;
 
     grid-template-columns:
         repeat(
@@ -1214,7 +1767,8 @@ body {
             1fr
         );
 
-    overflow: hidden;
+    overflow:
+        hidden;
 
     background:
         linear-gradient(
@@ -1225,14 +1779,17 @@ body {
     border:
         3px solid #a87e36;
 
-    border-radius: 10px;
+    border-radius:
+        10px;
 }
 
 
 #battleStats div {
-    padding: 15px;
+    padding:
+        15px;
 
-    text-align: center;
+    text-align:
+        center;
 
     border-right:
         1px solid #555;
@@ -1240,18 +1797,23 @@ body {
 
 
 #battleStats div:last-child {
-    border-right: none;
+    border-right:
+        none;
 }
 
 
 #battleStats strong {
-    display: block;
+    display:
+        block;
 
-    margin-top: 5px;
+    margin-top:
+        5px;
 
-    color: #ffd66b;
+    color:
+        #ffd66b;
 
-    font-size: 25px;
+    font-size:
+        25px;
 }
 
 
@@ -1260,12 +1822,14 @@ body {
 /* ===================================== */
 
 #manaPanel {
-    margin-top: 15px;
+    margin-top:
+        15px;
 
     padding:
         15px 20px;
 
-    text-align: center;
+    text-align:
+        center;
 
     background:
         linear-gradient(
@@ -1276,41 +1840,53 @@ body {
     border:
         3px solid #7460a5;
 
-    border-radius: 10px;
+    border-radius:
+        10px;
 }
 
 
 #manaTitle {
-    margin-bottom: 8px;
+    margin-bottom:
+        8px;
 
-    font-weight: 900;
+    font-weight:
+        900;
 }
 
 
 #manaBar {
-    width: 600px;
+    width:
+        600px;
 
-    max-width: 100%;
+    max-width:
+        100%;
 
-    height: 25px;
+    height:
+        25px;
 
-    margin: auto;
+    margin:
+        auto;
 
-    overflow: hidden;
+    overflow:
+        hidden;
 
-    background: #121026;
+    background:
+        #121026;
 
     border:
         3px solid white;
 
-    border-radius: 20px;
+    border-radius:
+        20px;
 }
 
 
 #manaFill {
-    width: 100%;
+    width:
+        100%;
 
-    height: 100%;
+    height:
+        100%;
 
     background:
         linear-gradient(
@@ -1322,18 +1898,23 @@ body {
 
 
 #manaText {
-    margin-top: 5px;
+    margin-top:
+        5px;
 
-    font-weight: bold;
+    font-weight:
+        bold;
 }
 
 
 #manaStatus {
-    margin-top: 5px;
+    margin-top:
+        5px;
 
-    color: #d5cff7;
+    color:
+        #d5cff7;
 
-    font-size: 13px;
+    font-size:
+        13px;
 }
 
 
@@ -1342,9 +1923,11 @@ body {
 /* ===================================== */
 
 .shop {
-    margin-top: 20px;
+    margin-top:
+        20px;
 
-    padding: 20px;
+    padding:
+        20px;
 
     background:
         linear-gradient(
@@ -1355,28 +1938,35 @@ body {
     border:
         4px solid #9f7837;
 
-    border-radius: 14px;
+    border-radius:
+        14px;
 }
 
 
 .shop h2 {
-    margin-top: 0;
+    margin-top:
+        0;
 
-    text-align: center;
+    text-align:
+        center;
 
-    color: #ffd36a;
+    color:
+        #ffd36a;
 }
 
 
 .shopDescription {
-    text-align: center;
+    text-align:
+        center;
 
-    color: #d6d6d6;
+    color:
+        #d6d6d6;
 }
 
 
 .shopGrid {
-    display: grid;
+    display:
+        grid;
 
     grid-template-columns:
         repeat(
@@ -1384,14 +1974,17 @@ body {
             1fr
         );
 
-    gap: 14px;
+    gap:
+        14px;
 }
 
 
 .upgradeCard {
-    padding: 15px;
+    padding:
+        15px;
 
-    text-align: center;
+    text-align:
+        center;
 
     background:
         linear-gradient(
@@ -1402,12 +1995,14 @@ body {
     border:
         3px solid #80673d;
 
-    border-radius: 10px;
+    border-radius:
+        10px;
 }
 
 
 .upgradeIcon {
-    font-size: 42px;
+    font-size:
+        42px;
 }
 
 
@@ -1418,16 +2013,20 @@ body {
 
 
 .upgradeCard button {
-    width: 100%;
+    width:
+        100%;
 
-    min-height: 44px;
+    min-height:
+        44px;
 
-    padding: 10px;
+    padding:
+        10px;
 
     border:
         3px solid #5d4214;
 
-    border-radius: 7px;
+    border-radius:
+        7px;
 
     background:
         linear-gradient(
@@ -1435,20 +2034,65 @@ body {
             #ba8728
         );
 
-    color: #251a08;
+    color:
+        #251a08;
 
-    font-weight: 900;
+    font-weight:
+        900;
 
-    cursor: pointer;
+    cursor:
+        pointer;
+}
+
+
+.upgradeCard button:hover {
+    filter:
+        brightness(
+            1.12
+        );
 }
 
 
 .abilityText {
-    min-height: 38px;
+    min-height:
+        50px;
 
-    color: #ddd;
+    color:
+        #ddd;
 
-    font-size: 13px;
+    font-size:
+        13px;
+}
+
+
+/* ===================================== */
+/* ULTIMATE SHOP */
+/* ===================================== */
+
+.ultimateShop {
+    border-color:
+        #ffe768;
+
+    background:
+        linear-gradient(
+            #614e7b,
+            #30203c
+        );
+
+    box-shadow:
+        0 0 18px
+        rgba(
+            255,
+            229,
+            104,
+            0.5
+        );
+}
+
+
+.ultimateShop h3 {
+    color:
+        #fff17a;
 }
 
 
@@ -1457,24 +2101,32 @@ body {
 /* ===================================== */
 
 #message {
-    min-height: 58px;
+    min-height:
+        58px;
 
-    margin-top: 15px;
+    margin-top:
+        15px;
 
-    padding: 16px;
+    padding:
+        16px;
 
-    text-align: center;
+    text-align:
+        center;
 
-    background: #222;
+    background:
+        #222;
 
     border:
         3px solid #515151;
 
-    border-radius: 10px;
+    border-radius:
+        10px;
 
-    font-size: 18px;
+    font-size:
+        18px;
 
-    font-weight: bold;
+    font-weight:
+        bold;
 }
 
 
@@ -1483,20 +2135,26 @@ body {
 /* ===================================== */
 
 #gameOver {
-    display: none;
+    display:
+        none;
 
-    margin-top: 20px;
+    margin-top:
+        20px;
 
-    padding: 30px;
+    padding:
+        30px;
 
-    text-align: center;
+    text-align:
+        center;
 
-    background: #44191b;
+    background:
+        #44191b;
 
     border:
         5px solid #b83737;
 
-    border-radius: 13px;
+    border-radius:
+        13px;
 }
 
 
@@ -1504,44 +2162,86 @@ body {
     padding:
         14px 28px;
 
-    border: none;
+    border:
+        none;
 
-    border-radius: 8px;
+    border-radius:
+        8px;
 
-    font-size: 18px;
+    background:
+        linear-gradient(
+            #ffd76a,
+            #bf8426
+        );
 
-    font-weight: 900;
+    color:
+        #231606;
 
-    cursor: pointer;
+    font-size:
+        18px;
+
+    font-weight:
+        900;
+
+    cursor:
+        pointer;
 }
 
 
 /* ===================================== */
-/* MOBILE */
+/* TABLET / SMALL SCREEN */
 /* ===================================== */
 
 @media
 (max-width: 850px) {
 
     #topBar {
-        gap: 10px;
+        gap:
+            10px;
 
-        flex-wrap: wrap;
+        flex-wrap:
+            wrap;
 
-        padding: 10px;
+        padding:
+            10px;
     }
+
 
     #gameTitle {
-        font-size: 18px;
+        font-size:
+            18px;
     }
+
 
     #topStats {
-        gap: 10px;
+        gap:
+            10px;
 
-        flex-wrap: wrap;
+        flex-wrap:
+            wrap;
 
-        font-size: 14px;
+        font-size:
+            14px;
     }
+
+
+    #codePanel {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .codeControls {
+        flex-direction:
+            column;
+    }
+
+
+    .codeControls button {
+        width:
+            100%;
+    }
+
 
     .shopGrid {
         grid-template-columns:
@@ -1550,6 +2250,7 @@ body {
                 1fr
             );
     }
+
 
     #battleStats {
         grid-template-columns:
@@ -1560,12 +2261,36 @@ body {
     }
 
 }
-#gameTitle {
-    margin: 0;
 
-    font-size: 26px;
 
-    font-weight: 900;
+/* ===================================== */
+/* VERY SMALL SCREEN */
+/* ===================================== */
 
-    letter-spacing: 1px;
+@media
+(max-width: 550px) {
+
+    .shopGrid {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    #questionControls {
+        flex-direction:
+            column;
+    }
+
+
+    #answer {
+        width:
+            100%;
+    }
+
+
+    #battlefield {
+        height:
+            525px;
+    }
+
 }

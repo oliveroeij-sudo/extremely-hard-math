@@ -8,134 +8,282 @@
 // HTML ELEMENTS
 // =====================================
 
-const battlefield = document.getElementById("battlefield");
-const enemyContainer = document.getElementById("enemyContainer");
-const arrowContainer = document.getElementById("arrowContainer");
-const spellContainer = document.getElementById("spellContainer");
+const battlefield =
+    document.getElementById("battlefield");
+
+const enemyContainer =
+    document.getElementById("enemyContainer");
+
+const arrowContainer =
+    document.getElementById("arrowContainer");
+
+const spellContainer =
+    document.getElementById("spellContainer");
 
 
+// =====================================
 // TOP STATS
+// =====================================
 
-const goldText = document.getElementById("gold");
-const mageCoinsText = document.getElementById("mageCoins");
-const waveText = document.getElementById("wave");
+const goldText =
+    document.getElementById("gold");
 
-const pauseButton = document.getElementById("pauseButton");
-const resetGameButton = document.getElementById("resetGameButton");
+const mageCoinsText =
+    document.getElementById("mageCoins");
 
+const waveText =
+    document.getElementById("wave");
 
-// SECRET CODE SYSTEM
+const pauseButton =
+    document.getElementById("pauseButton");
 
-const mageCodeInput = document.getElementById("mageCodeInput");
-const redeemMageCodeButton = document.getElementById("redeemMageCodeButton");
-const mageCodeMessage = document.getElementById("mageCodeMessage");
-
-const adminCodeInput = document.getElementById("adminCodeInput");
-const adminCodeButton = document.getElementById("adminCodeButton");
-
-const newCodeArea = document.getElementById("newCodeArea");
-const newMageCodeInput = document.getElementById("newMageCodeInput");
-const saveNewMageCodeButton = document.getElementById("saveNewMageCodeButton");
+const resetGameButton =
+    document.getElementById("resetGameButton");
 
 
+// =====================================
+// MAGE COIN CODE SYSTEM
+// =====================================
+
+const mageCodeInput =
+    document.getElementById("mageCodeInput");
+
+const redeemMageCodeButton =
+    document.getElementById("redeemMageCodeButton");
+
+const mageCodeMessage =
+    document.getElementById("mageCodeMessage");
+
+
+const adminCodeInput =
+    document.getElementById("adminCodeInput");
+
+const adminCodeButton =
+    document.getElementById("adminCodeButton");
+
+
+const newCodeArea =
+    document.getElementById("newCodeArea");
+
+const newMageCodeInput =
+    document.getElementById("newMageCodeInput");
+
+const saveNewMageCodeButton =
+    document.getElementById("saveNewMageCodeButton");
+
+
+// =====================================
 // CASTLE
+// =====================================
 
-const castleHealthFill = document.getElementById("castleHealthFill");
-const castleHealthText = document.getElementById("castleHealthText");
+const castleHealthFill =
+    document.getElementById("castleHealthFill");
+
+const castleHealthText =
+    document.getElementById("castleHealthText");
 
 
+// =====================================
 // STATS
+// =====================================
 
-const castleStat = document.getElementById("castleStat");
-const arrowDamageStat = document.getElementById("arrowDamageStat");
-const goldStat = document.getElementById("goldStat");
-const mageCoinStat = document.getElementById("mageCoinStat");
+const castleStat =
+    document.getElementById("castleStat");
+
+const arrowDamageStat =
+    document.getElementById("arrowDamageStat");
+
+const goldStat =
+    document.getElementById("goldStat");
+
+const mageCoinStat =
+    document.getElementById("mageCoinStat");
 
 
+// =====================================
 // QUESTION
+// =====================================
 
-const waveStartPanel = document.getElementById("waveStartPanel");
-const readyWave = document.getElementById("readyWave");
-const bottomWave = document.getElementById("bottomWave");
+const waveStartPanel =
+    document.getElementById("waveStartPanel");
 
-const bossWarning = document.getElementById("bossWarning");
+const readyWave =
+    document.getElementById("readyWave");
 
-const answerInput = document.getElementById("answer");
-const startWaveButton = document.getElementById("startWaveButton");
+const bottomWave =
+    document.getElementById("bottomWave");
 
-const questionMessage = document.getElementById("questionMessage");
-const questionText = document.getElementById("question");
+const bossWarning =
+    document.getElementById("bossWarning");
+
+const answerInput =
+    document.getElementById("answer");
+
+const startWaveButton =
+    document.getElementById("startWaveButton");
+
+const questionMessage =
+    document.getElementById("questionMessage");
+
+const questionText =
+    document.getElementById("question");
 
 
+// =====================================
 // MANA
+// =====================================
 
-const manaFill = document.getElementById("manaFill");
-const manaText = document.getElementById("manaText");
-const manaStatus = document.getElementById("manaStatus");
+const manaFill =
+    document.getElementById("manaFill");
+
+const manaText =
+    document.getElementById("manaText");
+
+const manaStatus =
+    document.getElementById("manaStatus");
 
 
+// =====================================
 // MAGES
+// =====================================
 
-const fireMageButton = document.getElementById("fireMage");
-const iceMageButton = document.getElementById("iceMage");
-const stormMageButton = document.getElementById("stormMage");
-const poisonMageButton = document.getElementById("poisonMage");
-const ultimateMageButton = document.getElementById("ultimateMage");
+const fireMageButton =
+    document.getElementById("fireMage");
 
-const fireCooldownText = document.getElementById("fireCooldownText");
-const iceCooldownText = document.getElementById("iceCooldownText");
-const stormCooldownText = document.getElementById("stormCooldownText");
-const poisonCooldownText = document.getElementById("poisonCooldownText");
-const ultimateCooldownText = document.getElementById("ultimateCooldownText");
+const iceMageButton =
+    document.getElementById("iceMage");
+
+const stormMageButton =
+    document.getElementById("stormMage");
+
+const poisonMageButton =
+    document.getElementById("poisonMage");
+
+const ultimateMageButton =
+    document.getElementById("ultimateMage");
 
 
+const fireCooldownText =
+    document.getElementById("fireCooldownText");
+
+const iceCooldownText =
+    document.getElementById("iceCooldownText");
+
+const stormCooldownText =
+    document.getElementById("stormCooldownText");
+
+const poisonCooldownText =
+    document.getElementById("poisonCooldownText");
+
+const ultimateCooldownText =
+    document.getElementById("ultimateCooldownText");
+
+
+// =====================================
 // NORMAL SHOP
+// =====================================
 
-const arrowUpgrade = document.getElementById("arrowUpgrade");
-const castleUpgrade = document.getElementById("castleUpgrade");
-const archerUpgrade = document.getElementById("archerUpgrade");
-const manaUpgrade = document.getElementById("manaUpgrade");
+const arrowUpgrade =
+    document.getElementById("arrowUpgrade");
 
-const arrowDamageValue = document.getElementById("arrowDamageValue");
-const castleHealthValue = document.getElementById("castleHealthValue");
-const archerLevelValue = document.getElementById("archerLevelValue");
-const maxManaValue = document.getElementById("maxManaValue");
+const castleUpgrade =
+    document.getElementById("castleUpgrade");
 
-const arrowCostText = document.getElementById("arrowCostText");
-const castleCostText = document.getElementById("castleCostText");
-const archerCostText = document.getElementById("archerCostText");
-const manaUpgradeCostText = document.getElementById("manaUpgradeCostText");
+const archerUpgrade =
+    document.getElementById("archerUpgrade");
+
+const manaUpgrade =
+    document.getElementById("manaUpgrade");
 
 
+const arrowDamageValue =
+    document.getElementById("arrowDamageValue");
+
+const castleHealthValue =
+    document.getElementById("castleHealthValue");
+
+const archerLevelValue =
+    document.getElementById("archerLevelValue");
+
+const maxManaValue =
+    document.getElementById("maxManaValue");
+
+
+const arrowCostText =
+    document.getElementById("arrowCostText");
+
+const castleCostText =
+    document.getElementById("castleCostText");
+
+const archerCostText =
+    document.getElementById("archerCostText");
+
+const manaUpgradeCostText =
+    document.getElementById("manaUpgradeCostText");
+
+
+// =====================================
 // MAGE SHOP
+// =====================================
 
-const fireUpgrade = document.getElementById("fireUpgrade");
-const iceUpgrade = document.getElementById("iceUpgrade");
-const stormUpgrade = document.getElementById("stormUpgrade");
-const poisonUpgrade = document.getElementById("poisonUpgrade");
+const fireUpgrade =
+    document.getElementById("fireUpgrade");
 
-const fireLevelText = document.getElementById("fireLevelText");
-const iceLevelText = document.getElementById("iceLevelText");
-const stormLevelText = document.getElementById("stormLevelText");
-const poisonLevelText = document.getElementById("poisonLevelText");
+const iceUpgrade =
+    document.getElementById("iceUpgrade");
 
-const fireUpgradeCostText = document.getElementById("fireUpgradeCostText");
+const stormUpgrade =
+    document.getElementById("stormUpgrade");
 
-
-// ULTIMATE MAGE SHOP
-
-const ultimateCard = document.getElementById("ultimateCard");
-const ultimateUnlockButton = document.getElementById("ultimateUnlock");
-const ultimateStatusText = document.getElementById("ultimateStatusText");
+const poisonUpgrade =
+    document.getElementById("poisonUpgrade");
 
 
+const fireLevelText =
+    document.getElementById("fireLevelText");
+
+const iceLevelText =
+    document.getElementById("iceLevelText");
+
+const stormLevelText =
+    document.getElementById("stormLevelText");
+
+const poisonLevelText =
+    document.getElementById("poisonLevelText");
+
+const fireUpgradeCostText =
+    document.getElementById("fireUpgradeCostText");
+
+
+// =====================================
+// ULTIMATE MAGE
+// =====================================
+
+const ultimateCard =
+    document.getElementById("ultimateCard");
+
+const ultimateUnlockButton =
+    document.getElementById("ultimateUnlock");
+
+const ultimateStatusText =
+    document.getElementById("ultimateStatusText");
+
+
+// =====================================
 // OTHER
+// =====================================
 
-const messageText = document.getElementById("message");
+const messageText =
+    document.getElementById("message");
 
-const gameOverPanel = document.getElementById("gameOver");
-const finalWaveText = document.getElementById("finalWave");
-const restartButton = document.getElementById("restartButton");
+const gameOverPanel =
+    document.getElementById("gameOver");
+
+const finalWaveText =
+    document.getElementById("finalWave");
+
+const restartButton =
+    document.getElementById("restartButton");
 
 
 // =====================================
@@ -143,54 +291,81 @@ const restartButton = document.getElementById("restartButton");
 // =====================================
 
 let gameRunning = true;
+
 let gamePaused = false;
+
 let battleActive = false;
 
 let correctAnswer = 0;
 
 
+// =====================================
 // WAVE
+// =====================================
 
 let wave = 1;
 
 
+// =====================================
 // CURRENCIES
+// =====================================
 
 let gold = 0;
+
 let mageCoins = 0;
 
 
+// =====================================
 // CASTLE
+// =====================================
 
 let castleHealth = 100;
+
 let maxCastleHealth = 100;
 
 
+// =====================================
 // ARCHERS
+// =====================================
 
 let arrowDamage = 5;
+
 let archerLevel = 1;
 
 
+// =====================================
 // MANA
+// =====================================
 
 let mana = 100;
+
 let maxMana = 100;
+
+
+// 0.2 MP every 100ms
+// = about 2 MP per second
 
 const manaRegenAmount = 0.2;
 
 
 // =====================================
-// RESPONSIVE ENEMY SPAWN
+// RESPONSIVE ENEMY SPEED
 // =====================================
-
-// This prevents enemies spawning very close
-// to the castle on narrower screens.
 //
-// They may begin slightly off-screen on an
-// iPad but still have a fair distance to walk.
+// On a narrow screen the enemies have a
+// shorter distance to the castle.
+//
+// Instead of spawning enemies far off-screen,
+// this code slows them down proportionally.
+//
+// That means an iPad should give you roughly
+// the same amount of fighting time as a
+// computer.
+//
 
-const minimumEnemySpawnX = 900;
+const referenceEnemyTravelDistance = 900;
+
+const castleHitPosition = 215;
 
 
 // =====================================
@@ -198,27 +373,31 @@ const minimumEnemySpawnX = 900;
 // =====================================
 
 
-// FIRE
+// FIRE STARTS UNLOCKED
 
 let fireUnlocked = true;
+
 let fireLevel = 1;
 
 
 // ICE
 
 let iceUnlocked = false;
+
 let iceLevel = 0;
 
 
 // STORM
 
 let stormUnlocked = false;
+
 let stormLevel = 0;
 
 
 // POISON
 
 let poisonUnlocked = false;
+
 let poisonLevel = 0;
 
 
@@ -232,31 +411,51 @@ let ultimateUnlocked = false;
 // =====================================
 
 const fireManaCost = 30;
+
 const iceManaCost = 25;
+
 const stormManaCost = 40;
+
 const poisonManaCost = 35;
 
 
 // =====================================
-// MAGE COOLDOWNS
+// CURRENT COOLDOWNS
 // =====================================
 
 let fireCooldown = 0;
+
 let iceCooldown = 0;
+
 let stormCooldown = 0;
+
 let poisonCooldown = 0;
 
 let ultimateCooldown = 0;
 
 
-// Each upgrade reduces cooldown.
+// =====================================
+// MAGE COOLDOWN LENGTHS
+// =====================================
+//
+// Upgrading a mage:
+// 1. increases damage
+// 2. reduces cooldown
+//
+// Cooldowns cannot fall below the minimum.
+//
 
 function getFireCooldownMax() {
 
     return Math.max(
         4,
-        10 - (fireLevel - 1) * 0.75
+        10 -
+        (
+            fireLevel - 1
+        ) *
+        0.75
     );
+
 }
 
 
@@ -264,8 +463,13 @@ function getIceCooldownMax() {
 
     return Math.max(
         5,
-        12 - (iceLevel - 1) * 0.9
+        12 -
+        (
+            iceLevel - 1
+        ) *
+        0.9
     );
+
 }
 
 
@@ -273,8 +477,13 @@ function getStormCooldownMax() {
 
     return Math.max(
         7,
-        16 - (stormLevel - 1) * 1.1
+        16 -
+        (
+            stormLevel - 1
+        ) *
+        1.1
     );
+
 }
 
 
@@ -282,10 +491,17 @@ function getPoisonCooldownMax() {
 
     return Math.max(
         8,
-        20 - (poisonLevel - 1) * 1.2
+        20 -
+        (
+            poisonLevel - 1
+        ) *
+        1.2
     );
+
 }
 
+
+// Ultimate cooldown = 3 minutes
 
 const ultimateCooldownMax = 180;
 
@@ -293,6 +509,14 @@ const ultimateCooldownMax = 180;
 // =====================================
 // ULTIMATE ARCHER BOOST
 // =====================================
+//
+// Ultimate destroys the current wave.
+//
+// THEN, for the NEXT 3 waves:
+//
+// Arrow damage = x2
+// Archer firing speed = x2
+//
 
 let ultimateBuffWavesRemaining = 0;
 
@@ -305,6 +529,7 @@ function ultimateBuffActive() {
         ultimateBuffWavesRemaining > 0 &&
         wave >= ultimateBuffStartWave
     );
+
 }
 
 
@@ -312,17 +537,26 @@ function ultimateBuffActive() {
 // SHOP COSTS
 // =====================================
 
+
+// NORMAL GOLD
+
 let arrowCost = 20;
+
 let castleCost = 25;
+
 let archerCost = 30;
+
 let manaUpgradeCost = 40;
 
 
 // MAGE COINS
 
 let fireUpgradeCost = 2;
+
 let iceUpgradeCost = 2;
+
 let stormUpgradeCost = 4;
+
 let poisonUpgradeCost = 4;
 
 
@@ -335,7 +569,9 @@ let enemies = [];
 let enemyID = 0;
 
 let enemiesToSpawn = 0;
+
 let enemiesSpawned = 0;
+
 let enemiesAlive = 0;
 
 let spawningFinished = false;
@@ -344,25 +580,38 @@ let spawnTimer = null;
 
 
 // =====================================
-// SECRET MAGE COIN CODE
+// MAGE COIN REDEEMER
 // =====================================
-
-// This code system is deliberately saved
-// separately from normal game progress.
 //
-// Restarting the game does NOT allow the
-// same code to be redeemed again.
+// Default code:
+//
+// 0308
+//
+// Gives 4 Mage Coins.
+//
+// It can only be used ONCE.
+//
+// This is stored separately from the game
+// save so Restart does not make it usable
+// again.
+//
 
 let mageRedeemerCode =
-    localStorage.getItem("mageRedeemerCode") || "0308";
+    localStorage.getItem(
+        "mageRedeemerCode"
+    ) ||
+    "0308";
 
 
 let mageRedeemerUsed =
-    localStorage.getItem("mageRedeemerUsed") === "true";
+    localStorage.getItem(
+        "mageRedeemerUsed"
+    ) ===
+    "true";
 
 
 // =====================================
-// REDEEM MAGE COIN CODE
+// REDEEM CODE
 // =====================================
 
 redeemMageCodeButton.addEventListener(
@@ -374,11 +623,12 @@ redeemMageCodeButton.addEventListener(
 
 
         if (
-            enteredCode !== mageRedeemerCode
+            enteredCode !==
+            mageRedeemerCode
         ) {
 
             mageCodeMessage.textContent =
-                "❌ Incorrect code.";
+                "❌ Incorrect Mage Coin code.";
 
             return;
 
@@ -397,7 +647,8 @@ redeemMageCodeButton.addEventListener(
         }
 
 
-        mageCoins += 4;
+        mageCoins +=
+            4;
 
 
         mageRedeemerUsed =
@@ -426,9 +677,35 @@ redeemMageCodeButton.addEventListener(
 );
 
 
+// ENTER ALSO WORKS
+
+mageCodeInput.addEventListener(
+    "keydown",
+    function(event) {
+
+        if (
+            event.key === "Enter"
+        ) {
+
+            redeemMageCodeButton.click();
+
+        }
+
+    }
+);
+
+
 // =====================================
-// ADMIN CODE
+// CODE CHANGER
 // =====================================
+//
+// Secret changer password:
+//
+// 2802
+//
+// Entering this reveals the box where
+// you can create a NEW 4 Mage Coin code.
+//
 
 adminCodeButton.addEventListener(
     "click",
@@ -439,7 +716,8 @@ adminCodeButton.addEventListener(
 
 
         if (
-            enteredCode === "2802"
+            enteredCode ===
+            "2802"
         ) {
 
             newCodeArea.style.display =
@@ -447,14 +725,14 @@ adminCodeButton.addEventListener(
 
 
             mageCodeMessage.textContent =
-                "🔓 Code creator unlocked.";
+                "🔓 Code changer unlocked.";
 
         }
 
         else {
 
             mageCodeMessage.textContent =
-                "❌ Incorrect reset code.";
+                "❌ Incorrect changer code.";
 
         }
 
@@ -466,9 +744,30 @@ adminCodeButton.addEventListener(
 );
 
 
+adminCodeInput.addEventListener(
+    "keydown",
+    function(event) {
+
+        if (
+            event.key === "Enter"
+        ) {
+
+            adminCodeButton.click();
+
+        }
+
+    }
+);
+
+
 // =====================================
-// CREATE NEW MAGE COIN CODE
+// SAVE NEW MAGE COIN CODE
 // =====================================
+//
+// Making a new code also resets the
+// redeemer so the NEW code can be used
+// once.
+//
 
 saveNewMageCodeButton.addEventListener(
     "click",
@@ -483,7 +782,7 @@ saveNewMageCodeButton.addEventListener(
         ) {
 
             mageCodeMessage.textContent =
-                "Enter a new code first.";
+                "❌ Enter a new Mage Coin code.";
 
             return;
 
@@ -519,7 +818,7 @@ saveNewMageCodeButton.addEventListener(
 
 
         mageCodeMessage.textContent =
-            "✅ New +4 Mage Coin code saved and reset.";
+            "✅ New Mage Coin code saved. It can now be redeemed once.";
 
     }
 );
@@ -531,7 +830,8 @@ saveNewMageCodeButton.addEventListener(
 
 function prepareWave() {
 
-    battleActive = false;
+    battleActive =
+        false;
 
 
     readyWave.textContent =
@@ -553,17 +853,20 @@ function prepareWave() {
     const number1 =
         Math.floor(
             Math.random() * 10
-        ) + 1;
+        ) +
+        1;
 
 
     const number2 =
         Math.floor(
             Math.random() * 10
-        ) + 1;
+        ) +
+        1;
 
 
     correctAnswer =
-        number1 + number2;
+        number1 +
+        number2;
 
 
     questionText.textContent =
@@ -582,6 +885,7 @@ function prepareWave() {
 
 
     // MAIN BOSS
+    // Waves 10, 20, 30...
 
     if (
         wave % 10 === 0
@@ -594,6 +898,7 @@ function prepareWave() {
 
 
     // MINI BOSS
+    // Waves 5, 15, 25...
 
     else if (
         wave % 5 === 0
@@ -632,6 +937,7 @@ function tryStartWave() {
     ) {
 
         return;
+
     }
 
 
@@ -643,6 +949,7 @@ function tryStartWave() {
             "Resume the game first.";
 
         return;
+
     }
 
 
@@ -653,13 +960,15 @@ function tryStartWave() {
 
 
     if (
-        answer !== correctAnswer
+        answer !==
+        correctAnswer
     ) {
 
         questionMessage.textContent =
             "❌ Wrong. Try again!";
 
         return;
+
     }
 
 
@@ -687,7 +996,8 @@ answerInput.addEventListener(
     function(event) {
 
         if (
-            event.key === "Enter"
+            event.key ===
+            "Enter"
         ) {
 
             tryStartWave();
@@ -753,6 +1063,7 @@ function beginWave() {
 
 
         return;
+
     }
 
 
@@ -789,6 +1100,7 @@ function beginWave() {
 
 
         return;
+
     }
 
 
@@ -799,7 +1111,8 @@ function beginWave() {
     enemiesToSpawn =
         3 +
         Math.floor(
-            wave * 1.35
+            wave *
+            1.35
         );
 
 
@@ -822,10 +1135,13 @@ function beginWave() {
                         spawnTimer
                     );
 
+
                     spawnTimer =
                         null;
 
+
                     return;
+
                 }
 
 
@@ -835,6 +1151,7 @@ function beginWave() {
                 ) {
 
                     return;
+
                 }
 
 
@@ -879,6 +1196,36 @@ function beginWave() {
 
 
 // =====================================
+// RESPONSIVE SPEED
+// =====================================
+
+function getResponsiveEnemySpeed(
+    normalSpeed,
+    spawnX
+) {
+
+    const actualDistance =
+        Math.max(
+            180,
+            spawnX -
+            castleHitPosition
+        );
+
+
+    const screenScale =
+        actualDistance /
+        referenceEnemyTravelDistance;
+
+
+    return (
+        normalSpeed *
+        screenScale
+    );
+
+}
+
+
+// =====================================
 // CREATE ENEMY
 // =====================================
 
@@ -889,8 +1236,11 @@ function createEnemy(
 
     let enemyHealth =
         25 +
-        wave * 10;
+        wave *
+        10;
 
+
+    // MINI BOSS HEALTH
 
     if (
         miniBoss
@@ -898,10 +1248,13 @@ function createEnemy(
 
         enemyHealth =
             300 +
-            wave * 35;
+            wave *
+            35;
 
     }
 
+
+    // MAIN BOSS HEALTH
 
     if (
         boss
@@ -909,38 +1262,49 @@ function createEnemy(
 
         enemyHealth =
             450 +
-            wave * 45;
+            wave *
+            45;
 
     }
 
 
-    let baseSpeed =
-        0.31 +
-        wave * 0.0126;
+    // NORMAL SPEED
 
+    let normalSpeed =
+        0.31 +
+        wave *
+        0.0126;
+
+
+    // MINI BOSS
 
     if (
         miniBoss
     ) {
 
-        baseSpeed =
+        normalSpeed =
             0.27;
 
     }
 
 
+    // MAIN BOSS
+
     if (
         boss
     ) {
 
-        baseSpeed =
+        normalSpeed =
             0.24;
 
     }
 
 
-    let visibleSpawnX =
-        battlefield.clientWidth -
+    // =====================================
+    // SPAWN AT RIGHT SIDE
+    // =====================================
+
+    let spawnOffset =
         100;
 
 
@@ -948,8 +1312,7 @@ function createEnemy(
         miniBoss
     ) {
 
-        visibleSpawnX =
-            battlefield.clientWidth -
+        spawnOffset =
             140;
 
     }
@@ -959,8 +1322,7 @@ function createEnemy(
         boss
     ) {
 
-        visibleSpawnX =
-            battlefield.clientWidth -
+        spawnOffset =
             165;
 
     }
@@ -968,8 +1330,20 @@ function createEnemy(
 
     const spawnX =
         Math.max(
-            minimumEnemySpawnX,
-            visibleSpawnX
+            castleHitPosition + 200,
+            battlefield.clientWidth -
+            spawnOffset
+        );
+
+
+    // Adjust enemy speed for the available
+    // width so iPad players do not have
+    // less reaction time.
+
+    const responsiveSpeed =
+        getResponsiveEnemySpeed(
+            normalSpeed,
+            spawnX
         );
 
 
@@ -988,7 +1362,7 @@ function createEnemy(
             spawnX,
 
         speed:
-            baseSpeed,
+            responsiveSpeed,
 
         alive:
             true,
@@ -1035,7 +1409,9 @@ function createEnemy(
         : "enemy";
 
 
+    // =====================================
     // BOSS LABEL
+    // =====================================
 
     if (
         boss ||
@@ -1065,7 +1441,9 @@ function createEnemy(
     }
 
 
+    // =====================================
     // HEALTH BAR
+    // =====================================
 
     const healthBar =
         document.createElement(
@@ -1097,7 +1475,9 @@ function createEnemy(
     );
 
 
-    // BODY
+    // =====================================
+    // ENEMY BODY
+    // =====================================
 
     const body =
         document.createElement(
@@ -1160,6 +1540,10 @@ function createEnemy(
         body
     );
 
+
+    // =====================================
+    // HEALTH NUMBER
+    // =====================================
 
     const healthText =
         document.createElement(
@@ -1227,6 +1611,7 @@ function updateEnemyPosition(
     ) {
 
         return;
+
     }
 
 
@@ -1258,12 +1643,15 @@ function moveEnemies() {
                 ) {
 
                     return;
+
                 }
 
 
                 let speed =
                     enemy.speed;
 
+
+                // ICE SLOW
 
                 if (
                     enemy.frozen > 0
@@ -1279,8 +1667,11 @@ function moveEnemies() {
                     speed;
 
 
+                // REACHED CASTLE
+
                 if (
-                    enemy.x <= 215
+                    enemy.x <=
+                    castleHitPosition
                 ) {
 
                     enemyHitCastle(
@@ -1327,6 +1718,7 @@ function enemyHitCastle(
     ) {
 
         return;
+
     }
 
 
@@ -1337,9 +1729,12 @@ function enemyHitCastle(
     let damage =
         9 +
         Math.floor(
-            wave / 3
+            wave /
+            3
         );
 
+
+    // MINI BOSS
 
     if (
         enemy.miniBoss
@@ -1350,6 +1745,8 @@ function enemyHitCastle(
 
     }
 
+
+    // MAIN BOSS
 
     if (
         enemy.boss
@@ -1391,7 +1788,8 @@ function enemyHitCastle(
 
 
     if (
-        castleHealth <= 0
+        castleHealth <=
+        0
     ) {
 
         gameOver();
@@ -1402,7 +1800,7 @@ function enemyHitCastle(
 
 
 // =====================================
-// ARCHERS
+// ARCHER DAMAGE
 // =====================================
 
 function getCurrentArrowDamage() {
@@ -1411,7 +1809,10 @@ function getCurrentArrowDamage() {
         ultimateBuffActive()
     ) {
 
-        return arrowDamage * 2;
+        return (
+            arrowDamage *
+            2
+        );
 
     }
 
@@ -1421,15 +1822,25 @@ function getCurrentArrowDamage() {
 }
 
 
+// =====================================
+// ARCHER FIRING SPEED
+// =====================================
+
 function getCurrentArcherDelay() {
 
     const normalDelay =
         Math.max(
+
             330,
+
             1100 -
-            archerLevel * 85
+            archerLevel *
+            85
+
         );
 
+
+    // Ultimate buff doubles firing speed
 
     if (
         ultimateBuffActive()
@@ -1437,7 +1848,8 @@ function getCurrentArcherDelay() {
 
         return Math.max(
             165,
-            normalDelay / 2
+            normalDelay /
+            2
         );
 
     }
@@ -1447,6 +1859,10 @@ function getCurrentArcherDelay() {
 
 }
 
+
+// =====================================
+// ARCHER LOOP
+// =====================================
 
 function archerLoop() {
 
@@ -1500,10 +1916,12 @@ function getClosestEnemy() {
 
 
     if (
-        livingEnemies.length === 0
+        livingEnemies.length ===
+        0
     ) {
 
         return null;
+
     }
 
 
@@ -1511,7 +1929,10 @@ function getClosestEnemy() {
 
         function(a, b) {
 
-            return a.x - b.x;
+            return (
+                a.x -
+                b.x
+            );
 
         }
 
@@ -1537,6 +1958,7 @@ function shootArrow(
     ) {
 
         return;
+
     }
 
 
@@ -1580,6 +2002,7 @@ function shootArrow(
             arrow.remove();
 
             return;
+
         }
 
 
@@ -1593,6 +2016,7 @@ function shootArrow(
             );
 
             return;
+
         }
 
 
@@ -1639,7 +2063,8 @@ function shootArrow(
 
 
         if (
-            progress < 1
+            progress <
+            1
         ) {
 
             requestAnimationFrame(
@@ -1658,8 +2083,11 @@ function shootArrow(
             ) {
 
                 damageEnemy(
+
                     target,
+
                     getCurrentArrowDamage()
+
                 );
 
             }
@@ -1691,6 +2119,7 @@ function damageEnemy(
     ) {
 
         return;
+
     }
 
 
@@ -1728,7 +2157,8 @@ function damageEnemy(
 
 
     if (
-        enemy.health <= 0
+        enemy.health <=
+        0
     ) {
 
         killEnemy(
@@ -1753,6 +2183,7 @@ function killEnemy(
     ) {
 
         return;
+
     }
 
 
@@ -1763,9 +2194,14 @@ function killEnemy(
     let reward =
         5 +
         Math.floor(
-            wave / 2
+            wave /
+            2
         );
 
+
+    // =====================================
+    // MAIN BOSS
+    // =====================================
 
     if (
         enemy.boss
@@ -1773,7 +2209,8 @@ function killEnemy(
 
         reward =
             50 +
-            wave * 2;
+            wave *
+            2;
 
 
         mageCoins +=
@@ -1787,6 +2224,10 @@ function killEnemy(
 
     }
 
+
+    // =====================================
+    // MINI BOSS
+    // =====================================
 
     else if (
         enemy.miniBoss
@@ -1861,7 +2302,8 @@ function removeEnemy(
 
 
     if (
-        enemiesAlive < 0
+        enemiesAlive <
+        0
     ) {
 
         enemiesAlive =
@@ -1887,6 +2329,7 @@ function checkWaveComplete() {
     ) {
 
         return;
+
     }
 
 
@@ -1899,9 +2342,13 @@ function checkWaveComplete() {
             false;
 
 
+        // FULL HEAL
+
         castleHealth =
             maxCastleHealth;
 
+
+        // FULL MANA
 
         mana =
             maxMana;
@@ -1917,7 +2364,8 @@ function checkWaveComplete() {
 
         const bonus =
             10 +
-            wave * 3;
+            wave *
+            3;
 
 
         gold +=
@@ -1932,8 +2380,9 @@ function checkWaveComplete() {
             " gold. Castle and mana restored!";
 
 
-        // Ultimate boost counts the NEXT
-        // three completed waves.
+        // =====================================
+        // ULTIMATE BUFF COUNTDOWN
+        // =====================================
 
         if (
             ultimateBuffWavesRemaining > 0 &&
@@ -1949,6 +2398,7 @@ function checkWaveComplete() {
 
 
         saveGame();
+
 
         updateUI();
 
@@ -1994,6 +2444,7 @@ function canCast(
             "🔒 Unlock this mage first.";
 
         return false;
+
     }
 
 
@@ -2005,6 +2456,7 @@ function canCast(
             "Answer the question and start the battle first.";
 
         return false;
+
     }
 
 
@@ -2016,28 +2468,33 @@ function canCast(
             "The game is paused.";
 
         return false;
+
     }
 
 
     if (
-        cooldown > 0
+        cooldown >
+        0
     ) {
 
         messageText.textContent =
             "That mage is still cooling down.";
 
         return false;
+
     }
 
 
     if (
-        mana < manaCost
+        mana <
+        manaCost
     ) {
 
         messageText.textContent =
             "Not enough mana!";
 
         return false;
+
     }
 
 
@@ -2067,6 +2524,7 @@ function castFire() {
     ) {
 
         return;
+
     }
 
 
@@ -2080,7 +2538,8 @@ function castFire() {
 
     const damage =
         7 +
-        fireLevel * 5;
+        fireLevel *
+        5;
 
 
     enemies.forEach(
@@ -2141,6 +2600,7 @@ function castIce() {
     ) {
 
         return;
+
     }
 
 
@@ -2154,7 +2614,8 @@ function castIce() {
 
     const damage =
         5 +
-        iceLevel * 4;
+        iceLevel *
+        4;
 
 
     enemies.forEach(
@@ -2173,7 +2634,8 @@ function castIce() {
 
                 enemy.frozen =
                     3 +
-                    iceLevel * 0.5;
+                    iceLevel *
+                    0.5;
 
             }
 
@@ -2220,6 +2682,7 @@ function castStorm() {
     ) {
 
         return;
+
     }
 
 
@@ -2233,24 +2696,40 @@ function castStorm() {
 
     const damage =
         10 +
-        stormLevel * 6;
+        stormLevel *
+        6;
 
 
     const targets =
         enemies
         .filter(
+
             function(enemy) {
+
                 return enemy.alive;
+
             }
+
         )
         .sort(
+
             function(a, b) {
-                return a.x - b.x;
+
+                return (
+                    a.x -
+                    b.x
+                );
+
             }
+
         )
         .slice(
+
             0,
-            3 + stormLevel
+
+            3 +
+            stormLevel
+
         );
 
 
@@ -2308,6 +2787,7 @@ function castPoison() {
     ) {
 
         return;
+
     }
 
 
@@ -2319,11 +2799,12 @@ function castPoison() {
         getPoisonCooldownMax();
 
 
-    // Old poison damage was approximately
-    // 1 + poisonLevel damage per second.
+    // Previous poison damage was roughly:
     //
-    // New poison is HALF that speed but
-    // NEVER expires once applied.
+    // 1 + poisonLevel per second
+    //
+    // New poison is 50% slower BUT
+    // never expires.
 
     const poisonDamagePerSecond =
         (
@@ -2347,8 +2828,11 @@ function castPoison() {
 
                 enemy.poisonDamagePerSecond =
                     Math.max(
+
                         enemy.poisonDamagePerSecond,
+
                         poisonDamagePerSecond
+
                     );
 
             }
@@ -2365,7 +2849,7 @@ function castPoison() {
 
 
     messageText.textContent =
-        "☠️ Permanent Poison! Poison stays on enemies until they die.";
+        "☠️ Permanent Poison! Poison continues until the enemy dies.";
 
 
     updateUI();
@@ -2390,6 +2874,7 @@ function castUltimate() {
     ) {
 
         return;
+
     }
 
 
@@ -2401,6 +2886,7 @@ function castUltimate() {
             "Start the battle before using the Ultimate Mage.";
 
         return;
+
     }
 
 
@@ -2412,25 +2898,30 @@ function castUltimate() {
             "Resume the game first.";
 
         return;
+
     }
 
 
     if (
-        ultimateCooldown > 0
+        ultimateCooldown >
+        0
     ) {
 
         messageText.textContent =
             "🌟 Ultimate Mage is still recharging.";
 
         return;
+
     }
 
+
+    // 3 MINUTE COOLDOWN
 
     ultimateCooldown =
         ultimateCooldownMax;
 
 
-    // Stop any more enemies from spawning.
+    // STOP MORE ENEMIES SPAWNING
 
     if (
         spawnTimer
@@ -2455,14 +2946,18 @@ function castUltimate() {
         enemiesToSpawn;
 
 
-    // Archer boost starts NEXT wave.
+    // =====================================
+    // ARCHER BOOST
+    // NEXT 3 WAVES
+    // =====================================
 
     ultimateBuffWavesRemaining =
         3;
 
 
     ultimateBuffStartWave =
-        wave + 1;
+        wave +
+        1;
 
 
     showSpell(
@@ -2472,11 +2967,16 @@ function castUltimate() {
 
 
     messageText.textContent =
-        "🌟 ULTIMATE! The entire wave is destroyed! Archers are doubled for the next 3 waves!";
+        "🌟 ULTIMATE! Wave destroyed! Archer damage and speed doubled for the next 3 waves!";
 
+
+    // Copy list first because killEnemy
+    // removes enemies from the real array.
 
     const enemiesToDestroy =
-        [...enemies];
+        [
+            ...enemies
+        ];
 
 
     enemiesToDestroy.forEach(
@@ -2498,7 +2998,12 @@ function castUltimate() {
     );
 
 
+    // If Ultimate was used before the
+    // first enemy appeared, this still
+    // completes the wave.
+
     checkWaveComplete();
+
 
     saveGame();
 
@@ -2567,6 +3072,8 @@ setInterval(
 
     function() {
 
+        // Everything pauses between waves.
+
         if (
             !gameRunning ||
             gamePaused ||
@@ -2574,13 +3081,17 @@ setInterval(
         ) {
 
             return;
+
         }
 
 
-        // MANA
+        // =====================================
+        // MANA REGENERATION
+        // =====================================
 
         if (
-            mana < maxMana
+            mana <
+            maxMana
         ) {
 
             mana +=
@@ -2588,7 +3099,8 @@ setInterval(
 
 
             if (
-                mana > maxMana
+                mana >
+                maxMana
             ) {
 
                 mana =
@@ -2599,7 +3111,9 @@ setInterval(
         }
 
 
+        // =====================================
         // COOLDOWNS
+        // =====================================
 
         fireCooldown =
             reduceTimer(
@@ -2631,6 +3145,10 @@ setInterval(
             );
 
 
+        // =====================================
+        // ICE AND POISON
+        // =====================================
+
         enemies.forEach(
 
             function(enemy) {
@@ -2640,13 +3158,15 @@ setInterval(
                 ) {
 
                     return;
+
                 }
 
 
                 // ICE
 
                 if (
-                    enemy.frozen > 0
+                    enemy.frozen >
+                    0
                 ) {
 
                     enemy.frozen -=
@@ -2654,7 +3174,8 @@ setInterval(
 
 
                     if (
-                        enemy.frozen < 0
+                        enemy.frozen <
+                        0
                     ) {
 
                         enemy.frozen =
@@ -2705,10 +3226,12 @@ function reduceTimer(
 ) {
 
     if (
-        timer <= 0
+        timer <=
+        0
     ) {
 
         return 0;
+
     }
 
 
@@ -2717,7 +3240,8 @@ function reduceTimer(
 
 
     if (
-        timer < 0
+        timer <
+        0
     ) {
 
         timer =
@@ -2732,11 +3256,8 @@ function reduceTimer(
 
 
 // =====================================
-// NORMAL GOLD UPGRADES
+// ARROW DAMAGE UPGRADE
 // =====================================
-
-
-// ARROW DAMAGE
 
 arrowUpgrade.addEventListener(
     "click",
@@ -2749,6 +3270,7 @@ arrowUpgrade.addEventListener(
         ) {
 
             return;
+
         }
 
 
@@ -2758,7 +3280,8 @@ arrowUpgrade.addEventListener(
 
         arrowCost =
             Math.floor(
-                arrowCost * 1.5
+                arrowCost *
+                1.5
             );
 
 
@@ -2774,7 +3297,9 @@ arrowUpgrade.addEventListener(
 );
 
 
-// CASTLE HEALTH
+// =====================================
+// CASTLE HEALTH UPGRADE
+// =====================================
 
 castleUpgrade.addEventListener(
     "click",
@@ -2787,6 +3312,7 @@ castleUpgrade.addEventListener(
         ) {
 
             return;
+
         }
 
 
@@ -2800,7 +3326,8 @@ castleUpgrade.addEventListener(
 
         castleCost =
             Math.floor(
-                castleCost * 1.5
+                castleCost *
+                1.5
             );
 
 
@@ -2816,7 +3343,9 @@ castleUpgrade.addEventListener(
 );
 
 
-// ARCHER SPEED
+// =====================================
+// ARCHER SPEED UPGRADE
+// =====================================
 
 archerUpgrade.addEventListener(
     "click",
@@ -2829,6 +3358,7 @@ archerUpgrade.addEventListener(
         ) {
 
             return;
+
         }
 
 
@@ -2837,7 +3367,8 @@ archerUpgrade.addEventListener(
 
         archerCost =
             Math.floor(
-                archerCost * 1.55
+                archerCost *
+                1.55
             );
 
 
@@ -2853,7 +3384,9 @@ archerUpgrade.addEventListener(
 );
 
 
-// MAX MANA
+// =====================================
+// MANA UPGRADE
+// =====================================
 
 manaUpgrade.addEventListener(
     "click",
@@ -2866,6 +3399,7 @@ manaUpgrade.addEventListener(
         ) {
 
             return;
+
         }
 
 
@@ -2879,7 +3413,8 @@ manaUpgrade.addEventListener(
 
         manaUpgradeCost =
             Math.floor(
-                manaUpgradeCost * 1.55
+                manaUpgradeCost *
+                1.55
             );
 
 
@@ -2896,7 +3431,7 @@ manaUpgrade.addEventListener(
 
 
 // =====================================
-// FIRE UPGRADE
+// FIRE MAGE UPGRADE
 // =====================================
 
 fireUpgrade.addEventListener(
@@ -2910,6 +3445,7 @@ fireUpgrade.addEventListener(
         ) {
 
             return;
+
         }
 
 
@@ -2922,7 +3458,7 @@ fireUpgrade.addEventListener(
         messageText.textContent =
             "🔥 Fire Mage Level " +
             fireLevel +
-            "! More damage and faster cooldown.";
+            "! Damage increased and cooldown reduced.";
 
 
         saveGame();
@@ -2934,12 +3470,14 @@ fireUpgrade.addEventListener(
 
 
 // =====================================
-// ICE UPGRADE
+// ICE MAGE
 // =====================================
 
 iceUpgrade.addEventListener(
     "click",
     function() {
+
+        // UNLOCK
 
         if (
             !iceUnlocked
@@ -2952,6 +3490,7 @@ iceUpgrade.addEventListener(
             ) {
 
                 return;
+
             }
 
 
@@ -2972,6 +3511,9 @@ iceUpgrade.addEventListener(
 
         }
 
+
+        // UPGRADE
+
         else {
 
             if (
@@ -2981,6 +3523,7 @@ iceUpgrade.addEventListener(
             ) {
 
                 return;
+
             }
 
 
@@ -2993,7 +3536,7 @@ iceUpgrade.addEventListener(
             messageText.textContent =
                 "❄️ Ice Mage Level " +
                 iceLevel +
-                "! More damage and faster cooldown.";
+                "! Damage increased and cooldown reduced.";
 
         }
 
@@ -3007,12 +3550,14 @@ iceUpgrade.addEventListener(
 
 
 // =====================================
-// STORM UPGRADE
+// STORM MAGE
 // =====================================
 
 stormUpgrade.addEventListener(
     "click",
     function() {
+
+        // UNLOCK
 
         if (
             !stormUnlocked
@@ -3025,6 +3570,7 @@ stormUpgrade.addEventListener(
             ) {
 
                 return;
+
             }
 
 
@@ -3045,6 +3591,9 @@ stormUpgrade.addEventListener(
 
         }
 
+
+        // UPGRADE
+
         else {
 
             if (
@@ -3054,6 +3603,7 @@ stormUpgrade.addEventListener(
             ) {
 
                 return;
+
             }
 
 
@@ -3066,7 +3616,7 @@ stormUpgrade.addEventListener(
             messageText.textContent =
                 "⚡ Storm Mage Level " +
                 stormLevel +
-                "! More damage and faster cooldown.";
+                "! Damage increased and cooldown reduced.";
 
         }
 
@@ -3080,12 +3630,14 @@ stormUpgrade.addEventListener(
 
 
 // =====================================
-// POISON UPGRADE
+// POISON MAGE
 // =====================================
 
 poisonUpgrade.addEventListener(
     "click",
     function() {
+
+        // UNLOCK
 
         if (
             !poisonUnlocked
@@ -3098,6 +3650,7 @@ poisonUpgrade.addEventListener(
             ) {
 
                 return;
+
             }
 
 
@@ -3118,6 +3671,9 @@ poisonUpgrade.addEventListener(
 
         }
 
+
+        // UPGRADE
+
         else {
 
             if (
@@ -3127,6 +3683,7 @@ poisonUpgrade.addEventListener(
             ) {
 
                 return;
+
             }
 
 
@@ -3139,7 +3696,7 @@ poisonUpgrade.addEventListener(
             messageText.textContent =
                 "☠️ Poison Mage Level " +
                 poisonLevel +
-                "! Stronger poison and faster cooldown.";
+                "! Poison damage increased and cooldown reduced.";
 
         }
 
@@ -3153,7 +3710,7 @@ poisonUpgrade.addEventListener(
 
 
 // =====================================
-// ULTIMATE MAGE UNLOCK
+// SECRET ULTIMATE MAGE
 // =====================================
 
 ultimateUnlockButton.addEventListener(
@@ -3165,8 +3722,11 @@ ultimateUnlockButton.addEventListener(
         ) {
 
             return;
+
         }
 
+
+        // Must have all four normal mages
 
         if (
             !fireUnlocked ||
@@ -3176,8 +3736,11 @@ ultimateUnlockButton.addEventListener(
         ) {
 
             return;
+
         }
 
+
+        // Cost 10 Mage Coins
 
         if (
             !spendMageCoins(
@@ -3186,6 +3749,7 @@ ultimateUnlockButton.addEventListener(
         ) {
 
             return;
+
         }
 
 
@@ -3214,13 +3778,15 @@ function spendGold(
 ) {
 
     if (
-        gold < amount
+        gold <
+        amount
     ) {
 
         messageText.textContent =
             "💰 Not enough Gold!";
 
         return false;
+
     }
 
 
@@ -3242,13 +3808,15 @@ function spendMageCoins(
 ) {
 
     if (
-        mageCoins < amount
+        mageCoins <
+        amount
     ) {
 
         messageText.textContent =
             "🪙 Not enough Mage Coins!";
 
         return false;
+
     }
 
 
@@ -3274,6 +3842,7 @@ pauseButton.addEventListener(
         ) {
 
             return;
+
         }
 
 
@@ -3318,7 +3887,9 @@ pauseButton.addEventListener(
 
 function updateUI() {
 
+    // =====================================
     // CURRENCY
+    // =====================================
 
     goldText.textContent =
         gold;
@@ -3336,13 +3907,17 @@ function updateUI() {
         mageCoins;
 
 
+    // =====================================
     // WAVE
+    // =====================================
 
     waveText.textContent =
         wave;
 
 
+    // =====================================
     // CASTLE
+    // =====================================
 
     castleStat.textContent =
         Math.ceil(
@@ -3371,7 +3946,9 @@ function updateUI() {
         "%";
 
 
-    // ARCHERS
+    // =====================================
+    // ARCHER
+    // =====================================
 
     arrowDamageStat.textContent =
         getCurrentArrowDamage();
@@ -3389,7 +3966,9 @@ function updateUI() {
         maxCastleHealth;
 
 
-    // COSTS
+    // =====================================
+    // NORMAL SHOP COSTS
+    // =====================================
 
     arrowCostText.textContent =
         arrowCost;
@@ -3407,7 +3986,9 @@ function updateUI() {
         manaUpgradeCost;
 
 
+    // =====================================
     // MANA
+    // =====================================
 
     maxManaValue.textContent =
         maxMana;
@@ -3435,7 +4016,9 @@ function updateUI() {
         "%";
 
 
+    // =====================================
     // MAGE LEVELS
+    // =====================================
 
     fireLevelText.textContent =
         fireLevel;
@@ -3457,7 +4040,9 @@ function updateUI() {
         fireUpgradeCost;
 
 
+    // =====================================
     // ICE BUTTON
+    // =====================================
 
     if (
         iceUnlocked
@@ -3478,7 +4063,9 @@ function updateUI() {
     }
 
 
+    // =====================================
     // STORM BUTTON
+    // =====================================
 
     if (
         stormUnlocked
@@ -3499,7 +4086,9 @@ function updateUI() {
     }
 
 
+    // =====================================
     // POISON BUTTON
+    // =====================================
 
     if (
         poisonUnlocked
@@ -3524,7 +4113,7 @@ function updateUI() {
     // SECRET ULTIMATE REVEAL
     // =====================================
 
-    const allMagesUnlocked =
+    const allNormalMagesUnlocked =
         fireUnlocked &&
         iceUnlocked &&
         stormUnlocked &&
@@ -3532,7 +4121,7 @@ function updateUI() {
 
 
     if (
-        allMagesUnlocked
+        allNormalMagesUnlocked
     ) {
 
         ultimateCard.style.display =
@@ -3547,6 +4136,10 @@ function updateUI() {
 
     }
 
+
+    // =====================================
+    // ULTIMATE STATUS
+    // =====================================
 
     if (
         ultimateUnlocked
@@ -3593,53 +4186,83 @@ function updateUI() {
 function updateMageButtons() {
 
     updateOneMage(
+
         fireMageButton,
+
         fireCooldownText,
+
         fireUnlocked,
+
         fireCooldown,
+
         fireManaCost
+
     );
 
 
     updateOneMage(
+
         iceMageButton,
+
         iceCooldownText,
+
         iceUnlocked,
+
         iceCooldown,
+
         iceManaCost
+
     );
 
 
     updateOneMage(
+
         stormMageButton,
+
         stormCooldownText,
+
         stormUnlocked,
+
         stormCooldown,
+
         stormManaCost
+
     );
 
 
     updateOneMage(
+
         poisonMageButton,
+
         poisonCooldownText,
+
         poisonUnlocked,
+
         poisonCooldown,
+
         poisonManaCost
+
     );
 
+
+    // =====================================
+    // ULTIMATE BUTTON
+    // =====================================
 
     if (
         ultimateUnlocked
     ) {
 
         if (
-            ultimateCooldown > 0
+            ultimateCooldown >
+            0
         ) {
 
             ultimateCooldownText.textContent =
                 Math.ceil(
                     ultimateCooldown
                 );
+
 
         }
 
@@ -3649,6 +4272,15 @@ function updateMageButtons() {
 
             ultimateCooldownText.textContent =
                 "WAIT";
+
+        }
+
+        else if (
+            gamePaused
+        ) {
+
+            ultimateCooldownText.textContent =
+                "⏸";
 
         }
 
@@ -3665,7 +4297,7 @@ function updateMageButtons() {
 
 
 // =====================================
-// UPDATE ONE MAGE
+// UPDATE ONE NORMAL MAGE
 // =====================================
 
 function updateOneMage(
@@ -3690,6 +4322,7 @@ function updateOneMage(
 
 
         return;
+
     }
 
 
@@ -3699,7 +4332,8 @@ function updateOneMage(
 
 
     if (
-        cooldown > 0
+        cooldown >
+        0
     ) {
 
         cooldownElement.textContent =
@@ -3711,7 +4345,8 @@ function updateOneMage(
 
 
     else if (
-        mana < manaCost
+        mana <
+        manaCost
     ) {
 
         cooldownElement.textContent =
@@ -3756,6 +4391,8 @@ function updateOneMage(
 
 function gameOver() {
 
+    // DYING DELETES GAME PROGRESS
+
     localStorage.removeItem(
         "extremelyHardMathSave"
     );
@@ -3776,6 +4413,10 @@ function gameOver() {
         clearInterval(
             spawnTimer
         );
+
+
+        spawnTimer =
+            null;
 
     }
 
@@ -3842,6 +4483,8 @@ function saveGame() {
 
     const gameData = {
 
+        // PROGRESS
+
         wave:
             wave,
 
@@ -3852,12 +4495,16 @@ function saveGame() {
             mageCoins,
 
 
+        // CASTLE
+
         castleHealth:
             castleHealth,
 
         maxCastleHealth:
             maxCastleHealth,
 
+
+        // ARCHERS
 
         arrowDamage:
             arrowDamage,
@@ -3866,12 +4513,16 @@ function saveGame() {
             archerLevel,
 
 
+        // MANA
+
         mana:
             mana,
 
         maxMana:
             maxMana,
 
+
+        // SHOP COSTS
 
         arrowCost:
             arrowCost,
@@ -3885,6 +4536,8 @@ function saveGame() {
         manaUpgradeCost:
             manaUpgradeCost,
 
+
+        // MAGES
 
         fireUnlocked:
             fireUnlocked,
@@ -3911,6 +4564,8 @@ function saveGame() {
             poisonLevel,
 
 
+        // MAGE COSTS
+
         fireUpgradeCost:
             fireUpgradeCost,
 
@@ -3924,6 +4579,8 @@ function saveGame() {
             poisonUpgradeCost,
 
 
+        // COOLDOWNS
+
         fireCooldown:
             fireCooldown,
 
@@ -3936,6 +4593,8 @@ function saveGame() {
         poisonCooldown:
             poisonCooldown,
 
+
+        // ULTIMATE
 
         ultimateUnlocked:
             ultimateUnlocked,
@@ -3982,6 +4641,7 @@ function loadGame() {
     ) {
 
         return;
+
     }
 
 
@@ -4159,7 +4819,7 @@ function loadGame() {
 
 
 // =====================================
-// SAVE BEFORE REFRESH
+// SAVE WHEN REFRESHING / CLOSING
 // =====================================
 
 window.addEventListener(
