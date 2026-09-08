@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
@@ -12,35 +13,12 @@
 
     <title>extremlYharDmatH!</title>
 
+
     <meta
         name="description"
-        content="extremlYharDmatH! is a free browser castle defence maths game with waves, mini bosses, bosses, mages, upgrades and magic abilities."
+        content="extremlYharDmatH! castle defence maths game."
     >
 
-    <meta
-        name="keywords"
-        content="extremlYharDmatH, extremely hard math, math game, castle defence game, browser game, mage game"
-    >
-
-    <meta
-        name="author"
-        content="extremlYharDmatH!"
-    >
-
-    <meta
-        property="og:title"
-        content="extremlYharDmatH!"
-    >
-
-    <meta
-        property="og:description"
-        content="A castle defence maths game with waves, mini bosses, bosses, mages and upgrades."
-    >
-
-    <meta
-        property="og:type"
-        content="website"
-    >
 
     <link
         rel="stylesheet"
@@ -59,12 +37,14 @@
 
     <header id="topBar">
 
+
         <h1 id="gameTitle">
             ⚔️ extremlYharDmatH!
         </h1>
 
 
         <div id="topStats">
+
 
             <span>
                 💰
@@ -105,9 +85,87 @@
                 🔄 RESTART
             </button>
 
+
         </div>
 
+
     </header>
+
+
+    <!-- ============================= -->
+    <!-- SECRET CODE PANEL -->
+    <!-- ============================= -->
+
+    <section id="codePanel">
+
+
+        <h3>
+            🪙 Enter Code to Gain 4 Mage Coins
+        </h3>
+
+
+        <input
+            id="mageCodeInput"
+            type="password"
+            placeholder="Enter Mage Coin code"
+            autocomplete="off"
+        >
+
+
+        <button
+            id="redeemMageCodeButton"
+            type="button"
+        >
+            REDEEM
+        </button>
+
+
+        <br><br>
+
+
+        <input
+            id="adminCodeInput"
+            type="password"
+            placeholder="Code settings"
+            autocomplete="off"
+        >
+
+
+        <button
+            id="adminCodeButton"
+            type="button"
+        >
+            ENTER
+        </button>
+
+
+        <div
+            id="newCodeArea"
+            style="display:none; margin-top:10px;"
+        >
+
+            <input
+                id="newMageCodeInput"
+                type="text"
+                placeholder="Enter new Mage Coin code"
+                autocomplete="off"
+            >
+
+
+            <button
+                id="saveNewMageCodeButton"
+                type="button"
+            >
+                SAVE NEW CODE
+            </button>
+
+        </div>
+
+
+        <div id="mageCodeMessage"></div>
+
+
+    </section>
 
 
     <main id="game">
@@ -135,13 +193,11 @@
 
 
             <!-- ============================= -->
-            <!-- CASTLE AREA -->
+            <!-- CASTLE -->
             <!-- ============================= -->
 
             <div id="castleArea">
 
-
-                <!-- HEALTH -->
 
                 <div id="castleHealthBar">
 
@@ -174,16 +230,13 @@
                             🔥
                         </div>
 
-
                         <div class="mageName">
                             FIRE
                         </div>
 
-
                         <div class="mpTag">
                             30 MP
                         </div>
-
 
                         <div
                             class="cooldownOverlay"
@@ -205,16 +258,13 @@
                             ❄️
                         </div>
 
-
                         <div class="mageName">
                             ICE
                         </div>
 
-
                         <div class="mpTag">
                             25 MP
                         </div>
-
 
                         <div
                             class="cooldownOverlay"
@@ -238,16 +288,13 @@
                             ⚡
                         </div>
 
-
                         <div class="mageName">
                             STORM
                         </div>
 
-
                         <div class="mpTag">
                             40 MP
                         </div>
-
 
                         <div
                             class="cooldownOverlay"
@@ -271,16 +318,13 @@
                             ☠️
                         </div>
 
-
                         <div class="mageName">
                             POISON
                         </div>
 
-
                         <div class="mpTag">
                             35 MP
                         </div>
-
 
                         <div
                             class="cooldownOverlay"
@@ -290,6 +334,36 @@
                         </div>
 
                     </button>
+
+
+                    <!-- ULTIMATE -->
+
+                    <button
+                        class="mage"
+                        id="ultimateMage"
+                        type="button"
+                        style="display:none;"
+                    >
+
+                        <div class="mageIcon">
+                            🌟
+                        </div>
+
+                        <div class="mageName">
+                            ULTIMATE
+                        </div>
+
+                        <div class="mpTag">
+                            DESTROY WAVE
+                        </div>
+
+                        <div
+                            class="cooldownOverlay"
+                            id="ultimateCooldownText"
+                        ></div>
+
+                    </button>
+
 
                 </div>
 
@@ -312,14 +386,12 @@
 
                     <div class="mainTower">
 
+
                         <div class="battlements">
 
                             <div></div>
-
                             <div></div>
-
                             <div></div>
-
                             <div></div>
 
                         </div>
@@ -330,6 +402,7 @@
                         <div class="castleWindow windowRight"></div>
 
                         <div class="castleDoor"></div>
+
 
                     </div>
 
@@ -342,7 +415,9 @@
 
                     </div>
 
+
                 </div>
+
 
             </div>
 
@@ -365,17 +440,20 @@
 
 
             <!-- ============================= -->
-            <!-- QUESTION BEFORE WAVE -->
+            <!-- QUESTION -->
             <!-- ============================= -->
 
             <div id="waveStartPanel">
 
 
                 <div id="waveStartTitle">
+
                     WAVE
+
                     <span id="readyWave">
                         1
                     </span>
+
                 </div>
 
 
@@ -392,6 +470,7 @@
 
                 <div id="questionControls">
 
+
                     <input
                         id="answer"
                         type="number"
@@ -407,12 +486,15 @@
                         ⚔️ START BATTLE
                     </button>
 
+
                 </div>
 
 
                 <div id="questionMessage"></div>
 
+
             </div>
+
 
         </section>
 
@@ -426,6 +508,7 @@
 
             <div>
                 🏰 Castle
+
                 <strong id="castleStat">
                     100
                 </strong>
@@ -434,6 +517,7 @@
 
             <div>
                 🏹 Arrow Damage
+
                 <strong id="arrowDamageStat">
                     5
                 </strong>
@@ -442,6 +526,7 @@
 
             <div>
                 💰 Gold
+
                 <strong id="goldStat">
                     0
                 </strong>
@@ -450,10 +535,12 @@
 
             <div>
                 🪙 Mage Coins
+
                 <strong id="mageCoinStat">
                     0
                 </strong>
             </div>
+
 
         </section>
 
@@ -486,11 +573,12 @@
                 Mana regeneration is paused until the battle starts.
             </div>
 
+
         </section>
 
 
         <!-- ============================= -->
-        <!-- NORMAL GOLD SHOP -->
+        <!-- CASTLE SHOP -->
         <!-- ============================= -->
 
         <section class="shop">
@@ -513,6 +601,7 @@
 
                 <div class="upgradeCard">
 
+
                     <div class="upgradeIcon">
                         🏹
                     </div>
@@ -525,6 +614,7 @@
 
                     <p>
                         Damage:
+
                         <strong id="arrowDamageValue">
                             5
                         </strong>
@@ -535,19 +625,25 @@
                         id="arrowUpgrade"
                         type="button"
                     >
+
                         Upgrade -
+
                         <span id="arrowCostText">
                             20
                         </span>
+
                         💰
+
                     </button>
+
 
                 </div>
 
 
-                <!-- HEALTH -->
+                <!-- CASTLE HEALTH -->
 
                 <div class="upgradeCard">
+
 
                     <div class="upgradeIcon">
                         🏰
@@ -561,6 +657,7 @@
 
                     <p>
                         Max:
+
                         <strong id="castleHealthValue">
                             100
                         </strong>
@@ -571,12 +668,17 @@
                         id="castleUpgrade"
                         type="button"
                     >
+
                         Upgrade -
+
                         <span id="castleCostText">
                             25
                         </span>
+
                         💰
+
                     </button>
+
 
                 </div>
 
@@ -584,6 +686,7 @@
                 <!-- ARCHER SPEED -->
 
                 <div class="upgradeCard">
+
 
                     <div class="upgradeIcon">
                         🏹
@@ -597,6 +700,7 @@
 
                     <p>
                         Level:
+
                         <strong id="archerLevelValue">
                             1
                         </strong>
@@ -607,12 +711,17 @@
                         id="archerUpgrade"
                         type="button"
                     >
+
                         Upgrade -
+
                         <span id="archerCostText">
                             30
                         </span>
+
                         💰
+
                     </button>
+
 
                 </div>
 
@@ -620,6 +729,7 @@
                 <!-- MANA -->
 
                 <div class="upgradeCard">
+
 
                     <div class="upgradeIcon">
                         ✨
@@ -633,6 +743,7 @@
 
                     <p>
                         Maximum:
+
                         <strong id="maxManaValue">
                             100
                         </strong>
@@ -643,16 +754,23 @@
                         id="manaUpgrade"
                         type="button"
                     >
+
                         Upgrade -
+
                         <span id="manaUpgradeCostText">
                             40
                         </span>
+
                         💰
+
                     </button>
+
 
                 </div>
 
+
             </div>
+
 
         </section>
 
@@ -673,9 +791,8 @@
 
 
             <p class="shopDescription">
-                Defeat a mini boss every 5 waves or a boss every
-                10 waves to earn 2 Mage Coins.
-                Mage Coins unlock and upgrade mages.
+                Mini bosses and bosses award Mage Coins.
+                Mage upgrades increase damage and reduce cooldown time.
             </p>
 
 
@@ -685,6 +802,7 @@
                 <!-- FIRE -->
 
                 <div class="upgradeCard mageShopCard fireShop">
+
 
                     <div class="upgradeIcon">
                         🔥
@@ -698,6 +816,7 @@
 
                     <p>
                         Level:
+
                         <strong id="fireLevelText">
                             1
                         </strong>
@@ -705,7 +824,8 @@
 
 
                     <p class="abilityText">
-                        Burns every enemy for moderate damage.
+                        Damages every enemy.
+                        Upgrades increase damage and reduce cooldown.
                     </p>
 
 
@@ -713,12 +833,17 @@
                         id="fireUpgrade"
                         type="button"
                     >
+
                         Upgrade -
+
                         <span id="fireUpgradeCostText">
                             2
                         </span>
+
                         🪙
+
                     </button>
+
 
                 </div>
 
@@ -726,6 +851,7 @@
                 <!-- ICE -->
 
                 <div class="upgradeCard mageShopCard iceShop">
+
 
                     <div class="upgradeIcon">
                         ❄️
@@ -739,6 +865,7 @@
 
                     <p>
                         Level:
+
                         <strong id="iceLevelText">
                             0
                         </strong>
@@ -746,7 +873,8 @@
 
 
                     <p class="abilityText">
-                        Damages and slows every enemy.
+                        Damages and slows enemies.
+                        Upgrades increase damage and reduce cooldown.
                     </p>
 
 
@@ -757,12 +885,14 @@
                         Unlock - 2 🪙
                     </button>
 
+
                 </div>
 
 
                 <!-- STORM -->
 
                 <div class="upgradeCard mageShopCard stormShop">
+
 
                     <div class="upgradeIcon">
                         ⚡
@@ -776,6 +906,7 @@
 
                     <p>
                         Level:
+
                         <strong id="stormLevelText">
                             0
                         </strong>
@@ -783,7 +914,8 @@
 
 
                     <p class="abilityText">
-                        Strikes several enemies with lightning.
+                        Strikes multiple enemies.
+                        Upgrades increase damage and reduce cooldown.
                     </p>
 
 
@@ -794,12 +926,14 @@
                         Unlock - 4 🪙
                     </button>
 
+
                 </div>
 
 
                 <!-- POISON -->
 
                 <div class="upgradeCard mageShopCard poisonShop">
+
 
                     <div class="upgradeIcon">
                         ☠️
@@ -813,6 +947,7 @@
 
                     <p>
                         Level:
+
                         <strong id="poisonLevelText">
                             0
                         </strong>
@@ -820,7 +955,7 @@
 
 
                     <p class="abilityText">
-                        Poisons enemies and damages them over time.
+                        Permanent poison that damages enemies until they die.
                     </p>
 
 
@@ -831,20 +966,67 @@
                         Unlock - 4 🪙
                     </button>
 
+
                 </div>
 
+
+                <!-- ============================= -->
+                <!-- SECRET ULTIMATE MAGE -->
+                <!-- ============================= -->
+
+                <div
+                    class="upgradeCard mageShopCard"
+                    id="ultimateCard"
+                    style="display:none;"
+                >
+
+
+                    <div class="upgradeIcon">
+                        🌟
+                    </div>
+
+
+                    <h3>
+                        SECRET ULTIMATE MAGE
+                    </h3>
+
+
+                    <p id="ultimateStatusText">
+                        Cost: 10 Mage Coins
+                    </p>
+
+
+                    <p class="abilityText">
+                        Instantly destroys one entire wave.
+                        Then doubles Archer Damage and Archer Speed
+                        for the next 3 waves.
+                        Cooldown: 3 minutes.
+                    </p>
+
+
+                    <button
+                        id="ultimateUnlock"
+                        type="button"
+                    >
+                        Unlock - 10 🪙
+                    </button>
+
+
+                </div>
+
+
             </div>
+
 
         </section>
 
 
-        <!-- ============================= -->
         <!-- MESSAGE -->
-        <!-- ============================= -->
 
         <section id="message">
 
             Answer the question to begin Wave
+
             <span id="bottomWave">
                 1
             </span>.
@@ -865,11 +1047,13 @@
 
 
             <p>
+
                 You reached Wave
 
                 <strong id="finalWave">
                     1
                 </strong>
+
             </p>
 
 
@@ -879,6 +1063,7 @@
             >
                 🔄 PLAY AGAIN
             </button>
+
 
         </section>
 
